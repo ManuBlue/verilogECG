@@ -1,0 +1,8 @@
+0.7
+2020.2
+May 22 2024
+19:03:11
+D:/Projects/verilogECG/verilogBase/verilogBase.sim/sim_1/behav/xsim/glbl.v,1708598507,verilog,,,,glbl,,uvm,,,,,,
+D:/Projects/verilogECG/verilogBase/verilogBase.srcs/sim_1/new/tb.sv,1737741028,systemVerilog,,,,test_realNo,,uvm,,,,,,
+D:/Projects/verilogECG/verilogBase/verilogBase.srcs/sim_1/new/tb.v,1737714921,verilog,,,,tb,,uvm,,,,,,
+D:/Projects/verilogECG/verilogBase/verilogBase.srcs/sources_1/new/main.sv,1737741187,systemVerilog,D:/Projects/verilogECG/verilogBase/verilogBase.srcs/sim_1/new/tb.sv,D:/Projects/verilogECG/verilogBase/verilogBase.srcs/sim_1/new/tb.sv,,main;utils,,uvm,,,,,,

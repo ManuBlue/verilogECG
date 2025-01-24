@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2024.1 (win64) Build 5076996 Wed May 22 18:37:14 MDT 2024
-| Date             : Wed Jan 22 14:14:46 2025
+| Date             : Fri Jan 24 23:48:53 2025
 | Host             : NoName running 64-bit major release  (build 9200)
 | Command          : report_power -file main_power_routed.rpt -pb main_power_summary_routed.pb -rpx main_power_routed.rpx
 | Design           : main
@@ -52,9 +52,9 @@ Table of Contents
 +--------------+-----------+----------+-----------+-----------------+
 | On-Chip      | Power (W) | Used     | Available | Utilization (%) |
 +--------------+-----------+----------+-----------+-----------------+
-| Slice Logic  |     0.000 |        1 |       --- |             --- |
-|   Others     |     0.000 |        1 |       --- |             --- |
-| I/O          |     0.000 |        1 |       210 |            0.48 |
+| Slice Logic  |     0.000 |        2 |       --- |             --- |
+|   Others     |     0.000 |        2 |       --- |             --- |
+| I/O          |     0.000 |        3 |       210 |            1.43 |
 | Static Power |     0.084 |          |           |                 |
 | Total        |     0.084 |          |           |                 |
 +--------------+-----------+----------+-----------+-----------------+

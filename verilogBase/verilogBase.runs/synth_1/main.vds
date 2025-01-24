@@ -3,8 +3,8 @@
 # SW Build 5076996 on Wed May 22 18:37:14 MDT 2024
 # IP Build 5075265 on Wed May 22 21:45:21 MDT 2024
 # SharedData Build 5076995 on Wed May 22 18:29:18 MDT 2024
-# Start of session at: Wed Jan 22 14:09:55 2025
-# Process ID: 32772
+# Start of session at: Fri Jan 24 23:46:20 2025
+# Process ID: 18900
 # Current directory: D:/Projects/verilogECG/verilogBase/verilogBase.runs/synth_1
 # Command line: vivado.exe -log main.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source main.tcl
 # Log file: D:/Projects/verilogECG/verilogBase/verilogBase.runs/synth_1/main.vds
@@ -17,12 +17,12 @@
 # CPU Physical cores:14
 # CPU Logical cores :20
 # Host memory       :16788 MB
-# Swap memory       :13421 MB
-# Total Virtual     :30210 MB
-# Available Virtual :13789 MB
+# Swap memory       :14495 MB
+# Total Virtual     :31284 MB
+# Available Virtual :12825 MB
 #-----------------------------------------------------------
 source main.tcl -notrace
-create_project: Time (s): cpu = 00:00:06 ; elapsed = 00:00:12 . Memory (MB): peak = 531.266 ; gain = 198.344
+create_project: Time (s): cpu = 00:00:05 ; elapsed = 00:00:12 . Memory (MB): peak = 530.582 ; gain = 201.062
 Command: read_checkpoint -auto_incremental -incremental D:/Projects/verilogECG/verilogBase/verilogBase.srcs/utils_1/imports/synth_1/main.dcp
 INFO: [Vivado 12-5825] Read reference checkpoint from D:/Projects/verilogECG/verilogBase/verilogBase.srcs/utils_1/imports/synth_1/main.dcp for incremental synthesis
 INFO: [Vivado 12-7989] Please ensure there are no constraint changes
@@ -37,64 +37,73 @@ INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental
 INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
 INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
 WARNING: [Common 17-1361] You have specified a new message control rule that is equivalent to an existing rule with attributes ' -id {17-179}  -suppress '. The existing rule will be replaced.
-INFO: [Synth 8-7075] Helper process launched with PID 13144
+INFO: [Synth 8-7075] Helper process launched with PID 38532
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:05 . Memory (MB): peak = 1402.598 ; gain = 449.000
+Starting RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:07 . Memory (MB): peak = 1401.895 ; gain = 451.137
 ---------------------------------------------------------------------------------
-INFO: [Synth 8-6157] synthesizing module 'main' [D:/Projects/verilogECG/verilogBase/verilogBase.srcs/sources_1/new/main.sv:112]
-INFO: [Synth 8-6155] done synthesizing module 'main' (0#1) [D:/Projects/verilogECG/verilogBase/verilogBase.srcs/sources_1/new/main.sv:112]
-WARNING: [Synth 8-11357] Potential Runtime issue for 3D-RAM or RAM from Record/Structs for RAM  weights1_reg with 250880 registers
+INFO: [Synth 8-6157] synthesizing module 'main' [D:/Projects/verilogECG/verilogBase/verilogBase.srcs/sources_1/new/main.sv:117]
+WARNING: [Synth 8-6896] if statement with non-constant condition is inside initial block, initial block items will be ignored [D:/Projects/verilogECG/verilogBase/verilogBase.srcs/sources_1/new/main.sv:33]
+WARNING: [Synth 8-6896] if statement with non-constant condition is inside initial block, initial block items will be ignored [D:/Projects/verilogECG/verilogBase/verilogBase.srcs/sources_1/new/main.sv:33]
+WARNING: [Synth 8-311] ignoring non-constant assignment in initial block [D:/Projects/verilogECG/verilogBase/verilogBase.srcs/sources_1/new/main.sv:53]
+WARNING: [Synth 8-311] ignoring non-constant assignment in initial block [D:/Projects/verilogECG/verilogBase/verilogBase.srcs/sources_1/new/main.sv:54]
+WARNING: [Synth 8-6896] if statement with non-constant condition is inside initial block, initial block items will be ignored [D:/Projects/verilogECG/verilogBase/verilogBase.srcs/sources_1/new/main.sv:33]
+WARNING: [Synth 8-311] ignoring non-constant assignment in initial block [D:/Projects/verilogECG/verilogBase/verilogBase.srcs/sources_1/new/main.sv:128]
+WARNING: [Synth 8-6896] if statement with non-constant condition is inside initial block, initial block items will be ignored [D:/Projects/verilogECG/verilogBase/verilogBase.srcs/sources_1/new/main.sv:129]
+INFO: [Synth 8-6155] done synthesizing module 'main' (0#1) [D:/Projects/verilogECG/verilogBase/verilogBase.srcs/sources_1/new/main.sv:117]
+WARNING: [Synth 8-3848] Net led in module/entity main does not have driver. [D:/Projects/verilogECG/verilogBase/verilogBase.srcs/sources_1/new/main.sv:119]
 WARNING: [Synth 8-3330] design main has an empty top module
-WARNING: [Synth 8-3917] design main has port led driven by constant 1
-WARNING: [Synth 8-7129] Port clk in module main is either unconnected or has no load
+WARNING: [Synth 8-7129] Port led[2] in module main is either unconnected or has no load
+WARNING: [Synth 8-7129] Port led[1] in module main is either unconnected or has no load
+WARNING: [Synth 8-7129] Port led[0] in module main is either unconnected or has no load
+WARNING: [Synth 8-7129] Port reset in module main is either unconnected or has no load
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:07 . Memory (MB): peak = 1534.258 ; gain = 580.660
+Finished RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:09 . Memory (MB): peak = 1510.270 ; gain = 559.512
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:04 ; elapsed = 00:00:07 . Memory (MB): peak = 1534.258 ; gain = 580.660
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:05 ; elapsed = 00:00:09 . Memory (MB): peak = 1510.270 ; gain = 559.512
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:04 ; elapsed = 00:00:07 . Memory (MB): peak = 1534.258 ; gain = 580.660
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:05 ; elapsed = 00:00:09 . Memory (MB): peak = 1510.270 ; gain = 559.512
 ---------------------------------------------------------------------------------
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1534.258 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1510.270 ; gain = 0.000
 INFO: [Project 1-570] Preparing netlist for logic optimization
 
 Processing XDC Constraints
 Initializing timing engine
-Parsing XDC File [D:/Projects/verilogECG/verilogBase/verilogBase.srcs/constrs_1/new/killMe.xdc]
-Finished Parsing XDC File [D:/Projects/verilogECG/verilogBase/verilogBase.srcs/constrs_1/new/killMe.xdc]
-INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [D:/Projects/verilogECG/verilogBase/verilogBase.srcs/constrs_1/new/killMe.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/main_propImpl.xdc].
+Parsing XDC File [D:/Projects/verilogECG/verilogBase/verilogBase.srcs/constrs_1/new/mainConstraint.xdc]
+Finished Parsing XDC File [D:/Projects/verilogECG/verilogBase/verilogBase.srcs/constrs_1/new/mainConstraint.xdc]
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [D:/Projects/verilogECG/verilogBase/verilogBase.srcs/constrs_1/new/mainConstraint.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/main_propImpl.xdc].
 Resolution: To avoid this warning, move constraints listed in [.Xil/main_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1534.258 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1521.238 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1534.258 ; gain = 0.000
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1521.238 ; gain = 0.000
 INFO: [Designutils 20-5440] No compile time benefit to using incremental synthesis; A full resynthesis will be run
 INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:08 ; elapsed = 00:00:19 . Memory (MB): peak = 1534.258 ; gain = 580.660
+Finished Constraint Validation : Time (s): cpu = 00:00:10 ; elapsed = 00:00:20 . Memory (MB): peak = 1521.238 ; gain = 570.480
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7a100tcsg324-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:08 ; elapsed = 00:00:19 . Memory (MB): peak = 1534.258 ; gain = 580.660
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:10 ; elapsed = 00:00:20 . Memory (MB): peak = 1521.238 ; gain = 570.480
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:08 ; elapsed = 00:00:19 . Memory (MB): peak = 1534.258 ; gain = 580.660
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:10 ; elapsed = 00:00:20 . Memory (MB): peak = 1521.238 ; gain = 570.480
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:08 ; elapsed = 00:00:20 . Memory (MB): peak = 1534.258 ; gain = 580.660
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:10 ; elapsed = 00:00:20 . Memory (MB): peak = 1521.238 ; gain = 570.480
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start RTL Component Statistics 
@@ -117,28 +126,30 @@ Start Cross Boundary and Area Optimization
 ---------------------------------------------------------------------------------
 WARNING: [Synth 8-7080] Parallel synthesis criteria is not met
 WARNING: [Synth 8-3330] design main has an empty top module
-WARNING: [Synth 8-3917] design main has port led driven by constant 1
-WARNING: [Synth 8-7129] Port clk in module main is either unconnected or has no load
+WARNING: [Synth 8-7129] Port led[2] in module main is either unconnected or has no load
+WARNING: [Synth 8-7129] Port led[1] in module main is either unconnected or has no load
+WARNING: [Synth 8-7129] Port led[0] in module main is either unconnected or has no load
+WARNING: [Synth 8-7129] Port reset in module main is either unconnected or has no load
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:09 ; elapsed = 00:00:22 . Memory (MB): peak = 1534.258 ; gain = 580.660
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:11 ; elapsed = 00:00:22 . Memory (MB): peak = 1521.238 ; gain = 570.480
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:12 ; elapsed = 00:00:28 . Memory (MB): peak = 1534.258 ; gain = 580.660
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:15 ; elapsed = 00:00:31 . Memory (MB): peak = 1521.238 ; gain = 570.480
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:12 ; elapsed = 00:00:28 . Memory (MB): peak = 1534.258 ; gain = 580.660
+Finished Timing Optimization : Time (s): cpu = 00:00:15 ; elapsed = 00:00:31 . Memory (MB): peak = 1521.238 ; gain = 570.480
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:12 ; elapsed = 00:00:28 . Memory (MB): peak = 1534.258 ; gain = 580.660
+Finished Technology Mapping : Time (s): cpu = 00:00:15 ; elapsed = 00:00:31 . Memory (MB): peak = 1521.238 ; gain = 570.480
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start IO Insertion
@@ -156,37 +167,37 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:14 ; elapsed = 00:00:33 . Memory (MB): peak = 1534.258 ; gain = 580.660
+Finished IO Insertion : Time (s): cpu = 00:00:17 ; elapsed = 00:00:37 . Memory (MB): peak = 1521.238 ; gain = 570.480
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:14 ; elapsed = 00:00:33 . Memory (MB): peak = 1534.258 ; gain = 580.660
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:17 ; elapsed = 00:00:37 . Memory (MB): peak = 1521.238 ; gain = 570.480
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:14 ; elapsed = 00:00:33 . Memory (MB): peak = 1534.258 ; gain = 580.660
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:17 ; elapsed = 00:00:37 . Memory (MB): peak = 1521.238 ; gain = 570.480
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:14 ; elapsed = 00:00:33 . Memory (MB): peak = 1534.258 ; gain = 580.660
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:17 ; elapsed = 00:00:37 . Memory (MB): peak = 1521.238 ; gain = 570.480
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:14 ; elapsed = 00:00:33 . Memory (MB): peak = 1534.258 ; gain = 580.660
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:17 ; elapsed = 00:00:37 . Memory (MB): peak = 1521.238 ; gain = 570.480
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:14 ; elapsed = 00:00:33 . Memory (MB): peak = 1534.258 ; gain = 580.660
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:17 ; elapsed = 00:00:37 . Memory (MB): peak = 1521.238 ; gain = 570.480
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -199,31 +210,31 @@ Report BlackBoxes:
 +-+--------------+----------+
 
 Report Cell Usage: 
-+------+-----+------+
-|      |Cell |Count |
-+------+-----+------+
-|1     |OBUF |     1|
-+------+-----+------+
++------+------+------+
+|      |Cell  |Count |
++------+------+------+
+|1     |OBUFT |     3|
++------+------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:14 ; elapsed = 00:00:33 . Memory (MB): peak = 1534.258 ; gain = 580.660
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:17 ; elapsed = 00:00:37 . Memory (MB): peak = 1521.238 ; gain = 570.480
 ---------------------------------------------------------------------------------
-Synthesis finished with 0 errors, 0 critical warnings and 4 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:10 ; elapsed = 00:00:31 . Memory (MB): peak = 1534.258 ; gain = 580.660
-Synthesis Optimization Complete : Time (s): cpu = 00:00:14 ; elapsed = 00:00:33 . Memory (MB): peak = 1534.258 ; gain = 580.660
+Synthesis finished with 0 errors, 0 critical warnings and 6 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:12 ; elapsed = 00:00:35 . Memory (MB): peak = 1521.238 ; gain = 559.512
+Synthesis Optimization Complete : Time (s): cpu = 00:00:18 ; elapsed = 00:00:38 . Memory (MB): peak = 1521.238 ; gain = 570.480
 INFO: [Project 1-571] Translating synthesized netlist
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1534.258 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1521.238 ; gain = 0.000
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1534.258 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1521.238 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Synth Design complete | Checksum: 7a37023e
+Synth Design complete | Checksum: 6626547e
 INFO: [Common 17-83] Releasing license: Synthesis
-22 Infos, 9 Warnings, 0 Critical Warnings and 0 Errors encountered.
+22 Infos, 20 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:16 ; elapsed = 00:00:40 . Memory (MB): peak = 1534.258 ; gain = 998.398
-Write ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1534.258 ; gain = 0.000
+synth_design: Time (s): cpu = 00:00:22 ; elapsed = 00:00:46 . Memory (MB): peak = 1521.238 ; gain = 985.707
+Write ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1521.238 ; gain = 0.000
 INFO: [Common 17-1381] The checkpoint 'D:/Projects/verilogECG/verilogBase/verilogBase.runs/synth_1/main.dcp' has been generated.
 INFO: [Vivado 12-24828] Executing command : report_utilization -file main_utilization_synth.rpt -pb main_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Wed Jan 22 14:10:50 2025...
+INFO: [Common 17-206] Exiting Vivado at Fri Jan 24 23:47:22 2025...

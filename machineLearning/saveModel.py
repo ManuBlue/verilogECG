@@ -22,6 +22,7 @@ def save_weights_to_text(model, file_path, precision=31):
                 f.write("=" * 50 + "\n")
 
 # Define the model architecture
+
 class myModel(nn.Module):
     def __init__(self, input_size, num_classes):
         super(myModel, self).__init__()
@@ -37,6 +38,24 @@ class myModel(nn.Module):
 
     def forward(self, x):
         return self.model(x)
+
+# class myModel(nn.Module):
+#     def __init__(self, input_size, num_classes):
+#         super(myModel, self).__init__()
+#         self.model = nn.Sequential(
+#             nn.Linear(input_size, 32),  # First dense layer
+#             #nn.ReLU(),                  # Activation function
+#             nn.Dropout(0.2),            # Dropout for regularization
+#             #nn.Linear(128, 64),         # Second dense layer
+#             #nn.ReLU(),                  # Activation function
+#             #nn.Dropout(0.2),            # Dropout for regularization
+#             nn.Linear(32, num_classes)  # Output layer for classification
+#         )
+
+#     def forward(self, x):
+#         return self.model(x)
+
+
 input_size = 187  
 num_classes = 5  
 model = myModel(input_size, num_classes)

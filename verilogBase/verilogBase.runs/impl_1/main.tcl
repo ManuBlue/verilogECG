@@ -121,7 +121,7 @@ OPTRACE "set parameters" END { }
 OPTRACE "add files" START { }
   add_files -quiet D:/Projects/verilogECG/verilogBase/verilogBase.runs/synth_1/main.dcp
 OPTRACE "read constraints: implementation" START { }
-  read_xdc D:/Projects/verilogECG/verilogBase/verilogBase.srcs/constrs_1/new/killMe.xdc
+  read_xdc D:/Projects/verilogECG/verilogBase/verilogBase.srcs/constrs_1/new/mainConstraint.xdc
 OPTRACE "read constraints: implementation" END { }
 OPTRACE "read constraints: implementation_pre" START { }
 OPTRACE "read constraints: implementation_pre" END { }

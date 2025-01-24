@@ -82,8 +82,8 @@ OPTRACE "Adding files" END { }
 foreach dcp [get_files -quiet -all -filter file_type=="Design\ Checkpoint"] {
   set_property used_in_implementation false $dcp
 }
-read_xdc D:/Projects/verilogECG/verilogBase/verilogBase.srcs/constrs_1/new/killMe.xdc
-set_property used_in_implementation false [get_files D:/Projects/verilogECG/verilogBase/verilogBase.srcs/constrs_1/new/killMe.xdc]
+read_xdc D:/Projects/verilogECG/verilogBase/verilogBase.srcs/constrs_1/new/mainConstraint.xdc
+set_property used_in_implementation false [get_files D:/Projects/verilogECG/verilogBase/verilogBase.srcs/constrs_1/new/mainConstraint.xdc]
 
 set_param ips.enableIPCacheLiteLoad 1
 
