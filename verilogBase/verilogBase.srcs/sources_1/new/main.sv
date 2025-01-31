@@ -119,18 +119,9 @@ module main(
         output reg [2:0] led
         );
         import utils::*;
-        realNo a; 
-        realNo b;
-        realNo result;
+        import myArrays::*;
+        int temp;
         initial begin
-            a = new(10,2);
-            b = new(5,2);
-            result = mult(a,b);
-            if(result.magnitude > 10) begin
-                led = 3;
-            end
-            else begin
-                led = 0;
-            end
+            temp = wts1[0];
         end
 endmodule

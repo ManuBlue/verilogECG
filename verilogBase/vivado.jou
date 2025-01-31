@@ -1,0 +1,29 @@
+#-----------------------------------------------------------
+# Vivado v2024.1 (64-bit)
+# SW Build 5076996 on Wed May 22 18:37:14 MDT 2024
+# IP Build 5075265 on Wed May 22 21:45:21 MDT 2024
+# SharedData Build 5076995 on Wed May 22 18:29:18 MDT 2024
+# Start of session at: Sat Jan 25 01:29:53 2025
+# Process ID: 39664
+# Current directory: D:/Projects/verilogECG/verilogBase
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent38932 D:\Projects\verilogECG\verilogBase\verilogBase.xpr
+# Log file: D:/Projects/verilogECG/verilogBase/vivado.log
+# Journal file: D:/Projects/verilogECG/verilogBase\vivado.jou
+# Running On        :NoName
+# Platform          :Windows Server 2016 or Windows 10
+# Operating System  :22631
+# Processor Detail  :12th Gen Intel(R) Core(TM) i7-12700H
+# CPU Frequency     :2688 MHz
+# CPU Physical cores:14
+# CPU Logical cores :20
+# Host memory       :16788 MB
+# Swap memory       :14495 MB
+# Total Virtual     :31284 MB
+# Available Virtual :10585 MB
+#-----------------------------------------------------------
+start_gui
+open_project D:/Projects/verilogECG/verilogBase/verilogBase.xpr
+update_compile_order -fileset sources_1
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 20
+wait_on_run impl_1

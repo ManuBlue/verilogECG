@@ -1,21 +1,3 @@
 Time resolution is 1 ps
-=== TESTING MULTIPLICATION ===
-Multiplication: Magnitude = 97406784, Exponent = 3
-
-=== TESTING DIVISION ===
-Division: Magnitude = 156, Exponent = 1
-
-=== TESTING ADDITION ===
-Addition: Magnitude = 123535, Exponent = 2
-
-=== TESTING SUBTRACTION ===
-Subtraction: Magnitude = 123377, Exponent = 2
-
-=== TESTING EDGE CASES ===
-Addition (large exponent diff): Magnitude = 1, Exponent = 20
-Subtraction (result = 0): Magnitude = 0, Exponent = 3
-Multiplication (zero magnitude): Magnitude = 0, Exponent = 6
-Division (large divisor): Magnitude = 0, Exponent = 5
-Addition (negative exponents): Magnitude = 457, Exponent = -3
-
-=== TESTING COMPLETED ===
+1D Array: '{1,2,3,4,5}
+2D Array: '{'{1,2,3},'{4,5,6},'{7,8,9}}

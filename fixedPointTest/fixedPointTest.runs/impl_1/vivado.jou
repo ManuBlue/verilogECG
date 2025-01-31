@@ -1,0 +1,24 @@
+#-----------------------------------------------------------
+# Vivado v2024.1 (64-bit)
+# SW Build 5076996 on Wed May 22 18:37:14 MDT 2024
+# IP Build 5075265 on Wed May 22 21:45:21 MDT 2024
+# SharedData Build 5076995 on Wed May 22 18:29:18 MDT 2024
+# Start of session at: Sat Jan 25 19:00:23 2025
+# Process ID: 30688
+# Current directory: D:/Projects/verilogECG/fixedPointTest/fixedPointTest.runs/impl_1
+# Command line: vivado.exe -log main.vdi -applog -product Vivado -messageDb vivado.pb -mode batch -source main.tcl -notrace
+# Log file: D:/Projects/verilogECG/fixedPointTest/fixedPointTest.runs/impl_1/main.vdi
+# Journal file: D:/Projects/verilogECG/fixedPointTest/fixedPointTest.runs/impl_1\vivado.jou
+# Running On        :NoName
+# Platform          :Windows Server 2016 or Windows 10
+# Operating System  :22631
+# Processor Detail  :12th Gen Intel(R) Core(TM) i7-12700H
+# CPU Frequency     :2688 MHz
+# CPU Physical cores:14
+# CPU Logical cores :20
+# Host memory       :16788 MB
+# Swap memory       :16106 MB
+# Total Virtual     :32895 MB
+# Available Virtual :17064 MB
+#-----------------------------------------------------------
+source main.tcl -notrace

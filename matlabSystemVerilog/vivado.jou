@@ -1,0 +1,63 @@
+#-----------------------------------------------------------
+# Vivado v2024.1 (64-bit)
+# SW Build 5076996 on Wed May 22 18:37:14 MDT 2024
+# IP Build 5075265 on Wed May 22 21:45:21 MDT 2024
+# SharedData Build 5076995 on Wed May 22 18:29:18 MDT 2024
+# Start of session at: Sun Jan 26 19:14:25 2025
+# Process ID: 33432
+# Current directory: D:/Projects/verilogECG/matlabSystemVerilog
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent34596 D:\Projects\verilogECG\matlabSystemVerilog\codegen\deepNN\hdlsrc\vivado_prj\deepNN_fixpt_vivado.xpr
+# Log file: D:/Projects/verilogECG/matlabSystemVerilog/vivado.log
+# Journal file: D:/Projects/verilogECG/matlabSystemVerilog\vivado.jou
+# Running On        :NoName
+# Platform          :Windows Server 2016 or Windows 10
+# Operating System  :22631
+# Processor Detail  :12th Gen Intel(R) Core(TM) i7-12700H
+# CPU Frequency     :2688 MHz
+# CPU Physical cores:14
+# CPU Logical cores :20
+# Host memory       :16788 MB
+# Swap memory       :16406 MB
+# Total Virtual     :33195 MB
+# Available Virtual :8160 MB
+#-----------------------------------------------------------
+start_gui
+open_project D:/Projects/verilogECG/matlabSystemVerilog/codegen/deepNN/hdlsrc/vivado_prj/deepNN_fixpt_vivado.xpr
+update_compile_order -fileset sources_1
+close_project
+open_project D:/vivadoRelated/nonRestoringDivision/nonRestoringDivision.xpr
+open_project D:/vivadoRelated/restoringDivision/restoringDivision.xpr
+update_compile_order -fileset sources_1
+launch_simulation
+source tb_restoringDivider.tcl
+file mkdir D:/vivadoRelated/nonRestoringDivision/nonRestoringDivision.srcs/sources_1/new
+current_project nonRestoringDivision
+close [ open D:/vivadoRelated/nonRestoringDivision/nonRestoringDivision.srcs/sources_1/new/nonRestoringDivisor.v w ]
+add_files D:/vivadoRelated/nonRestoringDivision/nonRestoringDivision.srcs/sources_1/new/nonRestoringDivisor.v
+update_compile_order -fileset sources_1
+launch_simulation
+file mkdir D:/vivadoRelated/nonRestoringDivision/nonRestoringDivision.srcs/sim_1/new
+set_property SOURCE_SET sources_1 [get_filesets sim_1]
+close [ open D:/vivadoRelated/nonRestoringDivision/nonRestoringDivision.srcs/sim_1/new/tb.v w ]
+add_files -fileset sim_1 D:/vivadoRelated/nonRestoringDivision/nonRestoringDivision.srcs/sim_1/new/tb.v
+update_compile_order -fileset sim_1
+current_project restoringDivision
+current_project nonRestoringDivision
+launch_simulation
+source nonRestoringDivider.tcl
+update_compile_order -fileset sim_1
+launch_simulation
+close_sim
+launch_simulation
+source tb.tcl
+close_sim
+launch_simulation
+source tb.tcl
+close_sim
+launch_simulation
+source tb.tcl
+synth_design -top nonRestoringDivider -part xc7a100tcsg324-1 -lint 
+synth_design -rtl -rtl_skip_mlo -name rtl_1
+close_sim
+close_project
+close_sim
