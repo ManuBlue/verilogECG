@@ -1,0 +1,339 @@
+****** Vivado v2024.1 (64-bit)
+  **** SW Build 5076996 on Wed May 22 18:37:14 MDT 2024
+  **** IP Build 5075265 on Wed May 22 21:45:21 MDT 2024
+  **** SharedData Build 5076995 on Wed May 22 18:29:18 MDT 2024
+  **** Start of session at: Mon Feb 17 17:41:45 2025
+    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+    ** Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+source decisionTree_fixpt_Xilinx_Vivado_run.tcl -notrace
+### Create new Xilinx Vivado  project <a href="matlab:downstream.handle('Model','decisionTree_fixpt','isMLHDLC','1').openTargetTool;">D:\Matlab Files\PTSP Lab\MachineLearning\codegen\decisionTree\hdlsrc\vivado_prj\decisionTree_fixpt_vivado.xpr</a>
+create_project: Time (s): cpu = 00:00:11 ; elapsed = 00:00:13 . Memory (MB): peak = 530.168 ; gain = 200.125
+### Set Xilinx Vivado  project properties
+### Update Xilinx Vivado  project with HDL source files
+WARNING: [Vivado 12-818] No files matched '*.tcl'
+### Running Synthesis in Xilinx Vivado  ...
+WARNING: [Vivado 12-7122] Auto Incremental Compile:: No reference checkpoint was found in run synth_1. Auto-incremental flow will not be run, the standard flow will be run instead.
+[Mon Feb 17 17:42:07 2025] Launched synth_1...
+Run output will be captured here: D:/Matlab Files/PTSP Lab/MachineLearning/codegen/decisionTree/hdlsrc/vivado_prj/decisionTree_fixpt_vivado.runs/synth_1/runme.log
+[Mon Feb 17 17:42:07 2025] Waiting for synth_1 to finish...
+*** Running vivado
+    with args -log decisionTree_fixpt.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source decisionTree_fixpt.tcl
+****** Vivado v2024.1 (64-bit)
+  **** SW Build 5076996 on Wed May 22 18:37:14 MDT 2024
+  **** IP Build 5075265 on Wed May 22 21:45:21 MDT 2024
+  **** SharedData Build 5076995 on Wed May 22 18:29:18 MDT 2024
+  **** Start of session at: Mon Feb 17 17:42:12 2025
+    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+    ** Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+source decisionTree_fixpt.tcl -notrace
+create_project: Time (s): cpu = 00:00:11 ; elapsed = 00:00:11 . Memory (MB): peak = 530.812 ; gain = 202.973
+Command: synth_design -top decisionTree_fixpt -part xa7a100tcsg324-1I
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xa7a100t'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xa7a100t'
+INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
+INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
+INFO: [Synth 8-7075] Helper process launched with PID 11424
+---------------------------------------------------------------------------------
+Starting Synthesize : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 986.246 ; gain = 452.504
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6157] synthesizing module 'decisionTree_fixpt' [D:/Matlab Files/PTSP Lab/MachineLearning/codegen/decisionTree/hdlsrc/decisionTree_fixpt.sv:30]
+INFO: [Synth 8-6155] done synthesizing module 'decisionTree_fixpt' (0#1) [D:/Matlab Files/PTSP Lab/MachineLearning/codegen/decisionTree/hdlsrc/decisionTree_fixpt.sv:30]
+WARNING: [Synth 8-7129] Port features[20][12] in module decisionTree_fixpt is either unconnected or has no load
+WARNING: [Synth 8-7129] Port features[20][11] in module decisionTree_fixpt is either unconnected or has no load
+WARNING: [Synth 8-7129] Port features[20][10] in module decisionTree_fixpt is either unconnected or has no load
+WARNING: [Synth 8-7129] Port features[20][9] in module decisionTree_fixpt is either unconnected or has no load
+WARNING: [Synth 8-7129] Port features[20][8] in module decisionTree_fixpt is either unconnected or has no load
+WARNING: [Synth 8-7129] Port features[20][7] in module decisionTree_fixpt is either unconnected or has no load
+WARNING: [Synth 8-7129] Port features[20][6] in module decisionTree_fixpt is either unconnected or has no load
+WARNING: [Synth 8-7129] Port features[20][5] in module decisionTree_fixpt is either unconnected or has no load
+WARNING: [Synth 8-7129] Port features[20][4] in module decisionTree_fixpt is either unconnected or has no load
+WARNING: [Synth 8-7129] Port features[20][3] in module decisionTree_fixpt is either unconnected or has no load
+WARNING: [Synth 8-7129] Port features[20][2] in module decisionTree_fixpt is either unconnected or has no load
+WARNING: [Synth 8-7129] Port features[20][1] in module decisionTree_fixpt is either unconnected or has no load
+WARNING: [Synth 8-7129] Port features[20][0] in module decisionTree_fixpt is either unconnected or has no load
+WARNING: [Synth 8-7129] Port features[28][12] in module decisionTree_fixpt is either unconnected or has no load
+WARNING: [Synth 8-7129] Port features[28][11] in module decisionTree_fixpt is either unconnected or has no load
+WARNING: [Synth 8-7129] Port features[28][10] in module decisionTree_fixpt is either unconnected or has no load
+WARNING: [Synth 8-7129] Port features[28][9] in module decisionTree_fixpt is either unconnected or has no load
+WARNING: [Synth 8-7129] Port features[28][8] in module decisionTree_fixpt is either unconnected or has no load
+WARNING: [Synth 8-7129] Port features[28][7] in module decisionTree_fixpt is either unconnected or has no load
+WARNING: [Synth 8-7129] Port features[28][6] in module decisionTree_fixpt is either unconnected or has no load
+WARNING: [Synth 8-7129] Port features[28][5] in module decisionTree_fixpt is either unconnected or has no load
+WARNING: [Synth 8-7129] Port features[28][4] in module decisionTree_fixpt is either unconnected or has no load
+WARNING: [Synth 8-7129] Port features[28][3] in module decisionTree_fixpt is either unconnected or has no load
+WARNING: [Synth 8-7129] Port features[28][2] in module decisionTree_fixpt is either unconnected or has no load
+WARNING: [Synth 8-7129] Port features[28][1] in module decisionTree_fixpt is either unconnected or has no load
+WARNING: [Synth 8-7129] Port features[28][0] in module decisionTree_fixpt is either unconnected or has no load
+WARNING: [Synth 8-7129] Port features[38][12] in module decisionTree_fixpt is either unconnected or has no load
+WARNING: [Synth 8-7129] Port features[38][11] in module decisionTree_fixpt is either unconnected or has no load
+WARNING: [Synth 8-7129] Port features[38][10] in module decisionTree_fixpt is either unconnected or has no load
+WARNING: [Synth 8-7129] Port features[38][9] in module decisionTree_fixpt is either unconnected or has no load
+WARNING: [Synth 8-7129] Port features[38][8] in module decisionTree_fixpt is either unconnected or has no load
+WARNING: [Synth 8-7129] Port features[38][7] in module decisionTree_fixpt is either unconnected or has no load
+WARNING: [Synth 8-7129] Port features[38][6] in module decisionTree_fixpt is either unconnected or has no load
+WARNING: [Synth 8-7129] Port features[38][5] in module decisionTree_fixpt is either unconnected or has no load
+WARNING: [Synth 8-7129] Port features[38][4] in module decisionTree_fixpt is either unconnected or has no load
+WARNING: [Synth 8-7129] Port features[38][3] in module decisionTree_fixpt is either unconnected or has no load
+WARNING: [Synth 8-7129] Port features[38][2] in module decisionTree_fixpt is either unconnected or has no load
+WARNING: [Synth 8-7129] Port features[38][1] in module decisionTree_fixpt is either unconnected or has no load
+WARNING: [Synth 8-7129] Port features[38][0] in module decisionTree_fixpt is either unconnected or has no load
+WARNING: [Synth 8-7129] Port features[46][12] in module decisionTree_fixpt is either unconnected or has no load
+WARNING: [Synth 8-7129] Port features[46][11] in module decisionTree_fixpt is either unconnected or has no load
+WARNING: [Synth 8-7129] Port features[46][10] in module decisionTree_fixpt is either unconnected or has no load
+WARNING: [Synth 8-7129] Port features[46][9] in module decisionTree_fixpt is either unconnected or has no load
+WARNING: [Synth 8-7129] Port features[46][8] in module decisionTree_fixpt is either unconnected or has no load
+WARNING: [Synth 8-7129] Port features[46][7] in module decisionTree_fixpt is either unconnected or has no load
+WARNING: [Synth 8-7129] Port features[46][6] in module decisionTree_fixpt is either unconnected or has no load
+WARNING: [Synth 8-7129] Port features[46][5] in module decisionTree_fixpt is either unconnected or has no load
+WARNING: [Synth 8-7129] Port features[46][4] in module decisionTree_fixpt is either unconnected or has no load
+WARNING: [Synth 8-7129] Port features[46][3] in module decisionTree_fixpt is either unconnected or has no load
+WARNING: [Synth 8-7129] Port features[46][2] in module decisionTree_fixpt is either unconnected or has no load
+WARNING: [Synth 8-7129] Port features[46][1] in module decisionTree_fixpt is either unconnected or has no load
+WARNING: [Synth 8-7129] Port features[46][0] in module decisionTree_fixpt is either unconnected or has no load
+WARNING: [Synth 8-7129] Port features[47][12] in module decisionTree_fixpt is either unconnected or has no load
+WARNING: [Synth 8-7129] Port features[47][11] in module decisionTree_fixpt is either unconnected or has no load
+WARNING: [Synth 8-7129] Port features[47][10] in module decisionTree_fixpt is either unconnected or has no load
+WARNING: [Synth 8-7129] Port features[47][9] in module decisionTree_fixpt is either unconnected or has no load
+WARNING: [Synth 8-7129] Port features[47][8] in module decisionTree_fixpt is either unconnected or has no load
+WARNING: [Synth 8-7129] Port features[47][7] in module decisionTree_fixpt is either unconnected or has no load
+WARNING: [Synth 8-7129] Port features[47][6] in module decisionTree_fixpt is either unconnected or has no load
+WARNING: [Synth 8-7129] Port features[47][5] in module decisionTree_fixpt is either unconnected or has no load
+WARNING: [Synth 8-7129] Port features[47][4] in module decisionTree_fixpt is either unconnected or has no load
+WARNING: [Synth 8-7129] Port features[47][3] in module decisionTree_fixpt is either unconnected or has no load
+WARNING: [Synth 8-7129] Port features[47][2] in module decisionTree_fixpt is either unconnected or has no load
+WARNING: [Synth 8-7129] Port features[47][1] in module decisionTree_fixpt is either unconnected or has no load
+WARNING: [Synth 8-7129] Port features[47][0] in module decisionTree_fixpt is either unconnected or has no load
+WARNING: [Synth 8-7129] Port features[53][12] in module decisionTree_fixpt is either unconnected or has no load
+WARNING: [Synth 8-7129] Port features[53][11] in module decisionTree_fixpt is either unconnected or has no load
+WARNING: [Synth 8-7129] Port features[53][10] in module decisionTree_fixpt is either unconnected or has no load
+WARNING: [Synth 8-7129] Port features[53][9] in module decisionTree_fixpt is either unconnected or has no load
+WARNING: [Synth 8-7129] Port features[53][8] in module decisionTree_fixpt is either unconnected or has no load
+WARNING: [Synth 8-7129] Port features[53][7] in module decisionTree_fixpt is either unconnected or has no load
+WARNING: [Synth 8-7129] Port features[53][6] in module decisionTree_fixpt is either unconnected or has no load
+WARNING: [Synth 8-7129] Port features[53][5] in module decisionTree_fixpt is either unconnected or has no load
+WARNING: [Synth 8-7129] Port features[53][4] in module decisionTree_fixpt is either unconnected or has no load
+WARNING: [Synth 8-7129] Port features[53][3] in module decisionTree_fixpt is either unconnected or has no load
+WARNING: [Synth 8-7129] Port features[53][2] in module decisionTree_fixpt is either unconnected or has no load
+WARNING: [Synth 8-7129] Port features[53][1] in module decisionTree_fixpt is either unconnected or has no load
+WARNING: [Synth 8-7129] Port features[53][0] in module decisionTree_fixpt is either unconnected or has no load
+WARNING: [Synth 8-7129] Port features[62][12] in module decisionTree_fixpt is either unconnected or has no load
+WARNING: [Synth 8-7129] Port features[62][11] in module decisionTree_fixpt is either unconnected or has no load
+WARNING: [Synth 8-7129] Port features[62][10] in module decisionTree_fixpt is either unconnected or has no load
+WARNING: [Synth 8-7129] Port features[62][9] in module decisionTree_fixpt is either unconnected or has no load
+WARNING: [Synth 8-7129] Port features[62][8] in module decisionTree_fixpt is either unconnected or has no load
+WARNING: [Synth 8-7129] Port features[62][7] in module decisionTree_fixpt is either unconnected or has no load
+WARNING: [Synth 8-7129] Port features[62][6] in module decisionTree_fixpt is either unconnected or has no load
+WARNING: [Synth 8-7129] Port features[62][5] in module decisionTree_fixpt is either unconnected or has no load
+WARNING: [Synth 8-7129] Port features[62][4] in module decisionTree_fixpt is either unconnected or has no load
+WARNING: [Synth 8-7129] Port features[62][3] in module decisionTree_fixpt is either unconnected or has no load
+WARNING: [Synth 8-7129] Port features[62][2] in module decisionTree_fixpt is either unconnected or has no load
+WARNING: [Synth 8-7129] Port features[62][1] in module decisionTree_fixpt is either unconnected or has no load
+WARNING: [Synth 8-7129] Port features[62][0] in module decisionTree_fixpt is either unconnected or has no load
+WARNING: [Synth 8-7129] Port features[63][12] in module decisionTree_fixpt is either unconnected or has no load
+WARNING: [Synth 8-7129] Port features[63][11] in module decisionTree_fixpt is either unconnected or has no load
+WARNING: [Synth 8-7129] Port features[63][10] in module decisionTree_fixpt is either unconnected or has no load
+WARNING: [Synth 8-7129] Port features[63][9] in module decisionTree_fixpt is either unconnected or has no load
+WARNING: [Synth 8-7129] Port features[63][8] in module decisionTree_fixpt is either unconnected or has no load
+WARNING: [Synth 8-7129] Port features[63][7] in module decisionTree_fixpt is either unconnected or has no load
+WARNING: [Synth 8-7129] Port features[63][6] in module decisionTree_fixpt is either unconnected or has no load
+WARNING: [Synth 8-7129] Port features[63][5] in module decisionTree_fixpt is either unconnected or has no load
+WARNING: [Synth 8-7129] Port features[63][4] in module decisionTree_fixpt is either unconnected or has no load
+INFO: [Common 17-14] Message 'Synth 8-7129' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+---------------------------------------------------------------------------------
+Finished Synthesize : Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 1104.859 ; gain = 571.117
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:08 ; elapsed = 00:00:09 . Memory (MB): peak = 1104.859 ; gain = 571.117
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xa7a100tcsg324-1I
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:08 ; elapsed = 00:00:09 . Memory (MB): peak = 1104.859 ; gain = 571.117
+---------------------------------------------------------------------------------
+INFO: [Device 21-403] Loading part xa7a100tcsg324-1I
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:09 ; elapsed = 00:00:10 . Memory (MB): peak = 1104.859 ; gain = 571.117
+---------------------------------------------------------------------------------
+No constraint files found.
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Muxes : 
+	   2 Input    3 Bit        Muxes := 39    
+	   3 Input    3 Bit        Muxes := 9     
+	   4 Input    3 Bit        Muxes := 4     
+	   6 Input    3 Bit        Muxes := 2     
+	   5 Input    3 Bit        Muxes := 1     
+	   2 Input    2 Bit        Muxes := 23    
+	   3 Input    2 Bit        Muxes := 10    
+	   5 Input    2 Bit        Muxes := 5     
+	   6 Input    2 Bit        Muxes := 1     
+	   4 Input    2 Bit        Muxes := 2     
+	   7 Input    2 Bit        Muxes := 1     
+	   2 Input    1 Bit        Muxes := 6     
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+INFO: [Device 21-9227] Part: xa7a100tcsg324-1I does not have CEAM library.
+Part Resources:
+DSPs: 240 (col length:80)
+BRAMs: 270 (col length: RAMB18 80 RAMB36 40)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+No constraint files found.
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+WARNING: [Synth 8-7080] Parallel synthesis criteria is not met
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:17 ; elapsed = 00:00:20 . Memory (MB): peak = 1317.145 ; gain = 783.402
+---------------------------------------------------------------------------------
+No constraint files found.
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:17 ; elapsed = 00:00:20 . Memory (MB): peak = 1326.008 ; gain = 792.266
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:17 ; elapsed = 00:00:20 . Memory (MB): peak = 1326.008 ; gain = 792.266
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:22 ; elapsed = 00:00:26 . Memory (MB): peak = 1326.051 ; gain = 792.309
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:22 ; elapsed = 00:00:26 . Memory (MB): peak = 1326.051 ; gain = 792.309
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:22 ; elapsed = 00:00:26 . Memory (MB): peak = 1326.051 ; gain = 792.309
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:22 ; elapsed = 00:00:26 . Memory (MB): peak = 1326.051 ; gain = 792.309
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:22 ; elapsed = 00:00:26 . Memory (MB): peak = 1326.051 ; gain = 792.309
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:22 ; elapsed = 00:00:26 . Memory (MB): peak = 1326.051 ; gain = 792.309
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+Report Cell Usage: 
++------+------+------+
+|      |Cell  |Count |
++------+------+------+
+|1     |LUT2  |    58|
+|2     |LUT3  |    68|
+|3     |LUT4  |    99|
+|4     |LUT5  |   138|
+|5     |LUT6  |   399|
+|6     |MUXF7 |     6|
+|7     |IBUF  |  1230|
+|8     |OBUF  |     3|
++------+------+------+
+Report Instance Areas: 
++------+---------+-------+------+
+|      |Instance |Module |Cells |
++------+---------+-------+------+
+|1     |top      |       |  2001|
++------+---------+-------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:22 ; elapsed = 00:00:26 . Memory (MB): peak = 1326.051 ; gain = 792.309
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 2367 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:22 ; elapsed = 00:00:26 . Memory (MB): peak = 1326.051 ; gain = 792.309
+Synthesis Optimization Complete : Time (s): cpu = 00:00:22 ; elapsed = 00:00:26 . Memory (MB): peak = 1326.051 ; gain = 792.309
+INFO: [Project 1-571] Translating synthesized netlist
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.019 . Memory (MB): peak = 1338.066 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 6 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+WARNING: [Netlist 29-101] Netlist 'decisionTree_fixpt' is not ideal for floorplanning, since the cellview 'decisionTree_fixpt' contains a large number of primitives.  Please consider enabling hierarchy in synthesis if you want to do floorplanning.
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1412.969 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+Synth Design complete | Checksum: 67109250
+INFO: [Common 17-83] Releasing license: Synthesis
+16 Infos, 102 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:24 ; elapsed = 00:00:29 . Memory (MB): peak = 1412.969 ; gain = 882.156
+Write ShapeDB Complete: Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.014 . Memory (MB): peak = 1412.969 ; gain = 0.000
+INFO: [Common 17-1381] The checkpoint 'D:/Matlab Files/PTSP Lab/MachineLearning/codegen/decisionTree/hdlsrc/vivado_prj/decisionTree_fixpt_vivado.runs/synth_1/decisionTree_fixpt.dcp' has been generated.
+INFO: [Vivado 12-24828] Executing command : report_utilization -file decisionTree_fixpt_utilization_synth.rpt -pb decisionTree_fixpt_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Mon Feb 17 17:42:55 2025...
+[Mon Feb 17 17:42:58 2025] synth_1 finished
+wait_on_runs: Time (s): cpu = 00:00:00 ; elapsed = 00:00:51 . Memory (MB): peak = 534.418 ; gain = 0.000
+### Synthesis Complete.
+### Running PostMapTiming in Xilinx Vivado  ...
+Design is defaulting to impl run constrset: constrs_1
+Design is defaulting to synth run part: xa7a100tcsg324-1I
+INFO: [Device 21-403] Loading part xa7a100tcsg324-1I
+INFO: [Device 21-9227] Part: xa7a100tcsg324-1I does not have CEAM library.
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.014 . Memory (MB): peak = 952.020 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 6 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+WARNING: [Netlist 29-101] Netlist 'decisionTree_fixpt' is not ideal for floorplanning, since the cellview 'decisionTree_fixpt' contains a large number of primitives.  Please consider enabling hierarchy in synthesis if you want to do floorplanning.
+INFO: [Project 1-479] Netlist was created with Vivado 2024.1
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1068.984 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+open_run: Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 1075.004 ; gain = 540.586
+WARNING: [Common 17-708] report_timing_summary: The '-name' option will be ignored because it is only relevant in GUI mode.
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+INFO: [Timing 38-91] UpdateTimingParams: Speed grade: -1I, Delay Type: min_max.
+INFO: [Timing 38-191] Multithreading enabled for timing update using a maximum of 2 CPUs
+report_timing_summary: Time (s): cpu = 00:00:08 ; elapsed = 00:00:09 . Memory (MB): peak = 1553.398 ; gain = 478.395
+### PostMapTiming Complete.
+### Close Xilinx Vivado  project.
+INFO: [Common 17-206] Exiting Vivado at Mon Feb 17 17:43:14 2025...
+Elapsed time is 93.2755 seconds.

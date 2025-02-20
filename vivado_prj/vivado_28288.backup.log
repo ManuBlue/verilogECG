@@ -1,0 +1,390 @@
+#-----------------------------------------------------------
+# Vivado v2024.1 (64-bit)
+# SW Build 5076996 on Wed May 22 18:37:14 MDT 2024
+# IP Build 5075265 on Wed May 22 21:45:21 MDT 2024
+# SharedData Build 5076995 on Wed May 22 18:29:18 MDT 2024
+# Start of session at: Mon Feb 17 17:43:32 2025
+# Process ID: 28288
+# Current directory: D:/Matlab Files/PTSP Lab/MachineLearning/codegen/decisionTree/hdlsrc/vivado_prj
+# Command line: vivado.exe -mode batch -notrace -source decisionTree_fixpt_Xilinx_Vivado_run.tcl
+# Log file: D:/Matlab Files/PTSP Lab/MachineLearning/codegen/decisionTree/hdlsrc/vivado_prj/vivado.log
+# Journal file: D:/Matlab Files/PTSP Lab/MachineLearning/codegen/decisionTree/hdlsrc/vivado_prj\vivado.jou
+# Running On        :NoName
+# Platform          :Windows Server 2016 or Windows 10
+# Operating System  :26100
+# Processor Detail  :12th Gen Intel(R) Core(TM) i7-12700H
+# CPU Frequency     :2688 MHz
+# CPU Physical cores:14
+# CPU Logical cores :20
+# Host memory       :16788 MB
+# Swap memory       :16788 MB
+# Total Virtual     :33577 MB
+# Available Virtual :18472 MB
+#-----------------------------------------------------------
+source decisionTree_fixpt_Xilinx_Vivado_run.tcl -notrace
+### Open existing Xilinx Vivado  project D:\Matlab Files\PTSP Lab\MachineLearning\codegen\decisionTree\hdlsrc\vivado_prj\decisionTree_fixpt_vivado.xpr
+INFO: [filemgmt 56-3] Default IP Output Path : Could not find the directory 'D:/Matlab Files/PTSP Lab/MachineLearning/codegen/decisionTree/hdlsrc/vivado_prj/decisionTree_fixpt_vivado.gen/sources_1'.
+Scanning sources...
+Finished scanning sources
+open_project: Time (s): cpu = 00:00:11 ; elapsed = 00:00:11 . Memory (MB): peak = 532.418 ; gain = 203.543
+### Running Implementation in Xilinx Vivado  ...
+[Mon Feb 17 17:43:48 2025] Launched impl_1...
+Run output will be captured here: D:/Matlab Files/PTSP Lab/MachineLearning/codegen/decisionTree/hdlsrc/vivado_prj/decisionTree_fixpt_vivado.runs/impl_1/runme.log
+[Mon Feb 17 17:43:48 2025] Waiting for impl_1 to finish...
+
+*** Running vivado
+    with args -log decisionTree_fixpt.vdi -applog -m64 -product Vivado -messageDb vivado.pb -mode batch -source decisionTree_fixpt.tcl -notrace
+
+
+
+****** Vivado v2024.1 (64-bit)
+  **** SW Build 5076996 on Wed May 22 18:37:14 MDT 2024
+  **** IP Build 5075265 on Wed May 22 21:45:21 MDT 2024
+  **** SharedData Build 5076995 on Wed May 22 18:29:18 MDT 2024
+  **** Start of session at: Mon Feb 17 17:43:58 2025
+    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+    ** Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+
+source decisionTree_fixpt.tcl -notrace
+create_project: Time (s): cpu = 00:00:10 ; elapsed = 00:00:11 . Memory (MB): peak = 529.359 ; gain = 199.672
+Command: link_design -top decisionTree_fixpt -part xa7a100tcsg324-1I
+Design is defaulting to srcset: sources_1
+Design is defaulting to constrset: constrs_1
+INFO: [Device 21-403] Loading part xa7a100tcsg324-1I
+INFO: [Device 21-9227] Part: xa7a100tcsg324-1I does not have CEAM library.
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.015 . Memory (MB): peak = 953.266 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 6 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+WARNING: [Netlist 29-101] Netlist 'decisionTree_fixpt' is not ideal for floorplanning, since the cellview 'decisionTree_fixpt' contains a large number of primitives.  Please consider enabling hierarchy in synthesis if you want to do floorplanning.
+INFO: [Project 1-479] Netlist was created with Vivado 2024.1
+INFO: [Project 1-570] Preparing netlist for logic optimization
+Read ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.016 . Memory (MB): peak = 1044.062 ; gain = 1.164
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1044.562 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+7 Infos, 1 Warnings, 0 Critical Warnings and 0 Errors encountered.
+link_design completed successfully
+link_design: Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 1073.414 ; gain = 544.055
+Command: opt_design
+Attempting to get a license for feature 'Implementation' and/or device 'xa7a100t'
+INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xa7a100t'
+Running DRC as a precondition to command opt_design
+
+Starting DRC Task
+INFO: [DRC 23-27] Running DRC with 2 threads
+INFO: [Project 1-461] DRC finished with 0 Errors
+INFO: [Project 1-462] Please refer to the DRC report (report_drc) for more information.
+
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.968 . Memory (MB): peak = 1102.547 ; gain = 29.133
+
+Starting Cache Timing Information Task
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+Ending Cache Timing Information Task | Checksum: 1b2e0b567
+
+Time (s): cpu = 00:00:08 ; elapsed = 00:00:08 . Memory (MB): peak = 1562.715 ; gain = 460.168
+
+Starting Logic Optimization Task
+
+Phase 1 Initialization
+
+Phase 1.1 Core Generation And Design Setup
+Phase 1.1 Core Generation And Design Setup | Checksum: 1b2e0b567
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.005 . Memory (MB): peak = 1939.367 ; gain = 0.000
+
+Phase 1.2 Setup Constraints And Sort Netlist
+Phase 1.2 Setup Constraints And Sort Netlist | Checksum: 1b2e0b567
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.009 . Memory (MB): peak = 1939.367 ; gain = 0.000
+Phase 1 Initialization | Checksum: 1b2e0b567
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.011 . Memory (MB): peak = 1939.367 ; gain = 0.000
+
+Phase 2 Timer Update And Timing Data Collection
+
+Phase 2.1 Timer Update
+Phase 2.1 Timer Update | Checksum: 1b2e0b567
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.045 . Memory (MB): peak = 1939.367 ; gain = 0.000
+
+Phase 2.2 Timing Data Collection
+Phase 2.2 Timing Data Collection | Checksum: 1b2e0b567
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.067 . Memory (MB): peak = 1939.367 ; gain = 0.000
+Phase 2 Timer Update And Timing Data Collection | Checksum: 1b2e0b567
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.068 . Memory (MB): peak = 1939.367 ; gain = 0.000
+
+Phase 3 Retarget
+INFO: [Opt 31-1834] Total Chains To Be Transformed Were: 0 AND Number of Transformed insts Created are: 0
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+INFO: [Opt 31-49] Retargeted 0 cell(s).
+Phase 3 Retarget | Checksum: 1b2e0b567
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.173 . Memory (MB): peak = 1939.367 ; gain = 0.000
+Retarget | Checksum: 1b2e0b567
+INFO: [Opt 31-389] Phase Retarget created 0 cells and removed 0 cells
+
+Phase 4 Constant propagation
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Phase 4 Constant propagation | Checksum: 1b2e0b567
+
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.182 . Memory (MB): peak = 1939.367 ; gain = 0.000
+Constant propagation | Checksum: 1b2e0b567
+INFO: [Opt 31-389] Phase Constant propagation created 0 cells and removed 0 cells
+
+Phase 5 Sweep
+Phase 5 Sweep | Checksum: 1b2e0b567
+
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.198 . Memory (MB): peak = 1939.367 ; gain = 0.000
+Sweep | Checksum: 1b2e0b567
+INFO: [Opt 31-389] Phase Sweep created 0 cells and removed 0 cells
+
+Phase 6 BUFG optimization
+Phase 6 BUFG optimization | Checksum: 1b2e0b567
+
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.245 . Memory (MB): peak = 1939.367 ; gain = 0.000
+BUFG optimization | Checksum: 1b2e0b567
+INFO: [Opt 31-662] Phase BUFG optimization created 0 cells of which 0 are BUFGs and removed 0 cells.
+
+Phase 7 Shift Register Optimization
+INFO: [Opt 31-1064] SRL Remap converted 0 SRLs to 0 registers and converted 0 registers of register chains to 0 SRLs
+Phase 7 Shift Register Optimization | Checksum: 1b2e0b567
+
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.249 . Memory (MB): peak = 1939.367 ; gain = 0.000
+Shift Register Optimization | Checksum: 1b2e0b567
+INFO: [Opt 31-389] Phase Shift Register Optimization created 0 cells and removed 0 cells
+
+Phase 8 Post Processing Netlist
+Phase 8 Post Processing Netlist | Checksum: 1b2e0b567
+
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.256 . Memory (MB): peak = 1939.367 ; gain = 0.000
+Post Processing Netlist | Checksum: 1b2e0b567
+INFO: [Opt 31-389] Phase Post Processing Netlist created 0 cells and removed 0 cells
+
+Phase 9 Finalization
+
+Phase 9.1 Finalizing Design Cores and Updating Shapes
+Phase 9.1 Finalizing Design Cores and Updating Shapes | Checksum: 1b2e0b567
+
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.259 . Memory (MB): peak = 1939.367 ; gain = 0.000
+
+Phase 9.2 Verifying Netlist Connectivity
+
+Starting Connectivity Check Task
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.003 . Memory (MB): peak = 1939.367 ; gain = 0.000
+Phase 9.2 Verifying Netlist Connectivity | Checksum: 1b2e0b567
+
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.263 . Memory (MB): peak = 1939.367 ; gain = 0.000
+Phase 9 Finalization | Checksum: 1b2e0b567
+
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.264 . Memory (MB): peak = 1939.367 ; gain = 0.000
+Opt_design Change Summary
+=========================
+
+
+-------------------------------------------------------------------------------------------------------------------------
+|  Phase                        |  #Cells created  |  #Cells Removed  |  #Constrained objects preventing optimizations  |
+-------------------------------------------------------------------------------------------------------------------------
+|  Retarget                     |               0  |               0  |                                              0  |
+|  Constant propagation         |               0  |               0  |                                              0  |
+|  Sweep                        |               0  |               0  |                                              0  |
+|  BUFG optimization            |               0  |               0  |                                              0  |
+|  Shift Register Optimization  |               0  |               0  |                                              0  |
+|  Post Processing Netlist      |               0  |               0  |                                              0  |
+-------------------------------------------------------------------------------------------------------------------------
+
+
+Ending Logic Optimization Task | Checksum: 1b2e0b567
+
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.266 . Memory (MB): peak = 1939.367 ; gain = 0.000
+
+Starting Power Optimization Task
+INFO: [Pwropt 34-132] Skipping clock gating for clocks with a period < 2.00 ns.
+Ending Power Optimization Task | Checksum: 1b2e0b567
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.023 . Memory (MB): peak = 1939.367 ; gain = 0.000
+
+Starting Final Cleanup Task
+Ending Final Cleanup Task | Checksum: 1b2e0b567
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1939.367 ; gain = 0.000
+
+Starting Netlist Obfuscation Task
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1939.367 ; gain = 0.000
+Ending Netlist Obfuscation Task | Checksum: 1b2e0b567
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.002 . Memory (MB): peak = 1939.367 ; gain = 0.000
+INFO: [Common 17-83] Releasing license: Implementation
+25 Infos, 1 Warnings, 0 Critical Warnings and 0 Errors encountered.
+opt_design completed successfully
+opt_design: Time (s): cpu = 00:00:13 ; elapsed = 00:00:13 . Memory (MB): peak = 1939.367 ; gain = 865.953
+INFO: [Vivado 12-24828] Executing command : report_drc -file decisionTree_fixpt_drc_opted.rpt -pb decisionTree_fixpt_drc_opted.pb -rpx decisionTree_fixpt_drc_opted.rpx
+Command: report_drc -file decisionTree_fixpt_drc_opted.rpt -pb decisionTree_fixpt_drc_opted.pb -rpx decisionTree_fixpt_drc_opted.rpx
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'E:/Vivado/2024.1/data/ip'.
+INFO: [DRC 23-27] Running DRC with 2 threads
+INFO: [Vivado_Tcl 2-168] The results of DRC are in file D:/Matlab Files/PTSP Lab/MachineLearning/codegen/decisionTree/hdlsrc/vivado_prj/decisionTree_fixpt_vivado.runs/impl_1/decisionTree_fixpt_drc_opted.rpt.
+report_drc completed successfully
+Write ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.012 . Memory (MB): peak = 1939.367 ; gain = 0.000
+INFO: [Common 17-1381] The checkpoint 'D:/Matlab Files/PTSP Lab/MachineLearning/codegen/decisionTree/hdlsrc/vivado_prj/decisionTree_fixpt_vivado.runs/impl_1/decisionTree_fixpt_opt.dcp' has been generated.
+Command: place_design
+Attempting to get a license for feature 'Implementation' and/or device 'xa7a100t'
+INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xa7a100t'
+INFO: [Common 17-83] Releasing license: Implementation
+INFO: [DRC 23-27] Running DRC with 2 threads
+INFO: [Vivado_Tcl 4-198] DRC finished with 0 Errors
+INFO: [Vivado_Tcl 4-199] Please refer to the DRC report (report_drc) for more information.
+Running DRC as a precondition to command place_design
+INFO: [DRC 23-27] Running DRC with 2 threads
+INFO: [Vivado_Tcl 4-198] DRC finished with 0 Errors
+INFO: [Vivado_Tcl 4-199] Please refer to the DRC report (report_drc) for more information.
+INFO: [Place 30-611] Multithreading enabled for place_design using a maximum of 2 CPUs
+
+Starting Placer Task
+
+Phase 1 Placer Initialization
+
+Phase 1.1 Placer Initialization Netlist Sorting
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1939.367 ; gain = 0.000
+Phase 1.1 Placer Initialization Netlist Sorting | Checksum: 14bd02317
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.026 . Memory (MB): peak = 1939.367 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1939.367 ; gain = 0.000
+
+Phase 1.2 IO Placement/ Clock Placement/ Build Placer Device
+ERROR: [Place 30-415] IO Placement failed due to overutilization. This design contains 1233 I/O ports
+ while the target  device: xa7a100t package: csg324, contains only 210 available user I/O. The target device has 210 usable I/O pins of which 0 are already occupied by user-locked I/Os.
+ To rectify this issue:
+ 1. Ensure you are targeting the correct device and package.  Select a larger device or different package if necessary.
+ 2. Check the top-level ports of the design to ensure the correct number of ports are specified.
+ 3. Consider design changes to reduce the number of I/Os necessary.
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+ERROR: [Place 30-68] Instance output_rsvd_OBUF[0]_inst (OBUF) is not placed
+ERROR: [Place 30-68] Instance output_rsvd_OBUF[0]_inst_i_100 (IBUF) is not placed
+ERROR: [Place 30-68] Instance output_rsvd_OBUF[0]_inst_i_101 (IBUF) is not placed
+ERROR: [Place 30-68] Instance output_rsvd_OBUF[0]_inst_i_104 (IBUF) is not placed
+ERROR: [Place 30-68] Instance output_rsvd_OBUF[0]_inst_i_105 (IBUF) is not placed
+ERROR: [Place 30-68] Instance output_rsvd_OBUF[0]_inst_i_108 (IBUF) is not placed
+ERROR: [Place 30-68] Instance output_rsvd_OBUF[0]_inst_i_109 (IBUF) is not placed
+ERROR: [Place 30-68] Instance output_rsvd_OBUF[0]_inst_i_110 (IBUF) is not placed
+ERROR: [Place 30-68] Instance output_rsvd_OBUF[0]_inst_i_111 (IBUF) is not placed
+ERROR: [Place 30-68] Instance output_rsvd_OBUF[0]_inst_i_122 (IBUF) is not placed
+ERROR: [Place 30-68] Instance output_rsvd_OBUF[0]_inst_i_123 (IBUF) is not placed
+ERROR: [Place 30-68] Instance output_rsvd_OBUF[0]_inst_i_125 (IBUF) is not placed
+ERROR: [Place 30-68] Instance output_rsvd_OBUF[0]_inst_i_126 (IBUF) is not placed
+ERROR: [Place 30-68] Instance output_rsvd_OBUF[0]_inst_i_129 (IBUF) is not placed
+ERROR: [Place 30-68] Instance output_rsvd_OBUF[0]_inst_i_130 (IBUF) is not placed
+ERROR: [Place 30-68] Instance output_rsvd_OBUF[0]_inst_i_135 (IBUF) is not placed
+ERROR: [Place 30-68] Instance output_rsvd_OBUF[0]_inst_i_136 (IBUF) is not placed
+ERROR: [Place 30-68] Instance output_rsvd_OBUF[0]_inst_i_137 (IBUF) is not placed
+ERROR: [Place 30-68] Instance output_rsvd_OBUF[0]_inst_i_141 (IBUF) is not placed
+ERROR: [Place 30-68] Instance output_rsvd_OBUF[0]_inst_i_142 (IBUF) is not placed
+ERROR: [Place 30-68] Instance output_rsvd_OBUF[0]_inst_i_143 (IBUF) is not placed
+ERROR: [Place 30-68] Instance output_rsvd_OBUF[0]_inst_i_144 (IBUF) is not placed
+ERROR: [Place 30-68] Instance output_rsvd_OBUF[0]_inst_i_145 (IBUF) is not placed
+ERROR: [Place 30-68] Instance output_rsvd_OBUF[0]_inst_i_146 (IBUF) is not placed
+ERROR: [Place 30-68] Instance output_rsvd_OBUF[0]_inst_i_147 (IBUF) is not placed
+ERROR: [Place 30-68] Instance output_rsvd_OBUF[0]_inst_i_148 (IBUF) is not placed
+ERROR: [Place 30-68] Instance output_rsvd_OBUF[0]_inst_i_149 (IBUF) is not placed
+ERROR: [Place 30-68] Instance output_rsvd_OBUF[0]_inst_i_151 (IBUF) is not placed
+ERROR: [Place 30-68] Instance output_rsvd_OBUF[0]_inst_i_152 (IBUF) is not placed
+ERROR: [Place 30-68] Instance output_rsvd_OBUF[0]_inst_i_153 (IBUF) is not placed
+ERROR: [Place 30-68] Instance output_rsvd_OBUF[0]_inst_i_154 (IBUF) is not placed
+ERROR: [Place 30-68] Instance output_rsvd_OBUF[0]_inst_i_155 (IBUF) is not placed
+ERROR: [Place 30-68] Instance output_rsvd_OBUF[0]_inst_i_156 (IBUF) is not placed
+ERROR: [Place 30-68] Instance output_rsvd_OBUF[0]_inst_i_157 (IBUF) is not placed
+ERROR: [Place 30-68] Instance output_rsvd_OBUF[0]_inst_i_158 (IBUF) is not placed
+ERROR: [Place 30-68] Instance output_rsvd_OBUF[0]_inst_i_159 (IBUF) is not placed
+ERROR: [Place 30-68] Instance output_rsvd_OBUF[0]_inst_i_160 (IBUF) is not placed
+ERROR: [Place 30-68] Instance output_rsvd_OBUF[0]_inst_i_161 (IBUF) is not placed
+ERROR: [Place 30-68] Instance output_rsvd_OBUF[0]_inst_i_162 (IBUF) is not placed
+ERROR: [Place 30-68] Instance output_rsvd_OBUF[0]_inst_i_163 (IBUF) is not placed
+ERROR: [Place 30-68] Instance output_rsvd_OBUF[0]_inst_i_164 (IBUF) is not placed
+ERROR: [Place 30-68] Instance output_rsvd_OBUF[0]_inst_i_165 (IBUF) is not placed
+ERROR: [Place 30-68] Instance output_rsvd_OBUF[0]_inst_i_166 (IBUF) is not placed
+ERROR: [Place 30-68] Instance output_rsvd_OBUF[0]_inst_i_169 (IBUF) is not placed
+ERROR: [Place 30-68] Instance output_rsvd_OBUF[0]_inst_i_170 (IBUF) is not placed
+ERROR: [Place 30-68] Instance output_rsvd_OBUF[0]_inst_i_171 (IBUF) is not placed
+ERROR: [Place 30-68] Instance output_rsvd_OBUF[0]_inst_i_172 (IBUF) is not placed
+ERROR: [Place 30-68] Instance output_rsvd_OBUF[0]_inst_i_175 (IBUF) is not placed
+ERROR: [Place 30-68] Instance output_rsvd_OBUF[0]_inst_i_176 (IBUF) is not placed
+ERROR: [Place 30-68] Instance output_rsvd_OBUF[0]_inst_i_178 (IBUF) is not placed
+ERROR: [Place 30-68] Instance output_rsvd_OBUF[0]_inst_i_181 (IBUF) is not placed
+ERROR: [Place 30-68] Instance output_rsvd_OBUF[0]_inst_i_182 (IBUF) is not placed
+ERROR: [Place 30-68] Instance output_rsvd_OBUF[0]_inst_i_183 (IBUF) is not placed
+ERROR: [Place 30-68] Instance output_rsvd_OBUF[0]_inst_i_196 (IBUF) is not placed
+ERROR: [Place 30-68] Instance output_rsvd_OBUF[0]_inst_i_205 (IBUF) is not placed
+ERROR: [Place 30-68] Instance output_rsvd_OBUF[0]_inst_i_206 (IBUF) is not placed
+ERROR: [Place 30-68] Instance output_rsvd_OBUF[0]_inst_i_207 (IBUF) is not placed
+ERROR: [Place 30-68] Instance output_rsvd_OBUF[0]_inst_i_208 (IBUF) is not placed
+ERROR: [Place 30-68] Instance output_rsvd_OBUF[0]_inst_i_209 (IBUF) is not placed
+ERROR: [Place 30-68] Instance output_rsvd_OBUF[0]_inst_i_212 (IBUF) is not placed
+ERROR: [Place 30-68] Instance output_rsvd_OBUF[0]_inst_i_213 (IBUF) is not placed
+ERROR: [Place 30-68] Instance output_rsvd_OBUF[0]_inst_i_214 (IBUF) is not placed
+ERROR: [Place 30-68] Instance output_rsvd_OBUF[0]_inst_i_216 (IBUF) is not placed
+ERROR: [Place 30-68] Instance output_rsvd_OBUF[0]_inst_i_217 (IBUF) is not placed
+ERROR: [Place 30-68] Instance output_rsvd_OBUF[0]_inst_i_219 (IBUF) is not placed
+ERROR: [Place 30-68] Instance output_rsvd_OBUF[0]_inst_i_232 (IBUF) is not placed
+ERROR: [Place 30-68] Instance output_rsvd_OBUF[0]_inst_i_234 (IBUF) is not placed
+ERROR: [Place 30-68] Instance output_rsvd_OBUF[0]_inst_i_235 (IBUF) is not placed
+ERROR: [Place 30-68] Instance output_rsvd_OBUF[0]_inst_i_237 (IBUF) is not placed
+ERROR: [Place 30-68] Instance output_rsvd_OBUF[0]_inst_i_238 (IBUF) is not placed
+ERROR: [Place 30-68] Instance output_rsvd_OBUF[0]_inst_i_239 (IBUF) is not placed
+ERROR: [Place 30-68] Instance output_rsvd_OBUF[0]_inst_i_240 (IBUF) is not placed
+ERROR: [Place 30-68] Instance output_rsvd_OBUF[0]_inst_i_241 (IBUF) is not placed
+ERROR: [Place 30-68] Instance output_rsvd_OBUF[0]_inst_i_242 (IBUF) is not placed
+ERROR: [Place 30-68] Instance output_rsvd_OBUF[0]_inst_i_244 (IBUF) is not placed
+ERROR: [Place 30-68] Instance output_rsvd_OBUF[0]_inst_i_245 (IBUF) is not placed
+ERROR: [Place 30-68] Instance output_rsvd_OBUF[0]_inst_i_246 (IBUF) is not placed
+ERROR: [Place 30-68] Instance output_rsvd_OBUF[0]_inst_i_247 (IBUF) is not placed
+ERROR: [Place 30-68] Instance output_rsvd_OBUF[0]_inst_i_251 (IBUF) is not placed
+ERROR: [Place 30-68] Instance output_rsvd_OBUF[0]_inst_i_254 (IBUF) is not placed
+ERROR: [Place 30-68] Instance output_rsvd_OBUF[0]_inst_i_255 (IBUF) is not placed
+ERROR: [Place 30-68] Instance output_rsvd_OBUF[0]_inst_i_256 (IBUF) is not placed
+ERROR: [Place 30-68] Instance output_rsvd_OBUF[0]_inst_i_257 (IBUF) is not placed
+ERROR: [Place 30-68] Instance output_rsvd_OBUF[0]_inst_i_258 (IBUF) is not placed
+ERROR: [Place 30-68] Instance output_rsvd_OBUF[0]_inst_i_260 (IBUF) is not placed
+ERROR: [Place 30-68] Instance output_rsvd_OBUF[0]_inst_i_262 (IBUF) is not placed
+ERROR: [Place 30-68] Instance output_rsvd_OBUF[0]_inst_i_263 (IBUF) is not placed
+ERROR: [Place 30-68] Instance output_rsvd_OBUF[0]_inst_i_264 (IBUF) is not placed
+ERROR: [Place 30-68] Instance output_rsvd_OBUF[0]_inst_i_265 (IBUF) is not placed
+ERROR: [Place 30-68] Instance output_rsvd_OBUF[0]_inst_i_267 (IBUF) is not placed
+ERROR: [Place 30-68] Instance output_rsvd_OBUF[0]_inst_i_268 (IBUF) is not placed
+ERROR: [Place 30-68] Instance output_rsvd_OBUF[0]_inst_i_271 (IBUF) is not placed
+ERROR: [Place 30-68] Instance output_rsvd_OBUF[0]_inst_i_272 (IBUF) is not placed
+ERROR: [Place 30-68] Instance output_rsvd_OBUF[0]_inst_i_273 (IBUF) is not placed
+ERROR: [Place 30-68] Instance output_rsvd_OBUF[0]_inst_i_275 (IBUF) is not placed
+ERROR: [Place 30-68] Instance output_rsvd_OBUF[0]_inst_i_276 (IBUF) is not placed
+ERROR: [Place 30-68] Instance output_rsvd_OBUF[0]_inst_i_277 (IBUF) is not placed
+ERROR: [Place 30-68] Instance output_rsvd_OBUF[0]_inst_i_278 (IBUF) is not placed
+ERROR: [Place 30-68] Instance output_rsvd_OBUF[0]_inst_i_279 (IBUF) is not placed
+ERROR: [Place 30-68] Instance output_rsvd_OBUF[0]_inst_i_280 (IBUF) is not placed
+INFO: [Common 17-14] Message 'Place 30-68' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+Phase 1.2 IO Placement/ Clock Placement/ Build Placer Device | Checksum: 14bd02317
+
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.525 . Memory (MB): peak = 1939.367 ; gain = 0.000
+Phase 1 Placer Initialization | Checksum: 14bd02317
+
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.527 . Memory (MB): peak = 1939.367 ; gain = 0.000
+ERROR: [Place 30-99] Placer failed with error: 'IO Clock Placer failed'
+Please review all ERROR, CRITICAL WARNING, and WARNING messages during placement to understand the cause for failure.
+Ending Placer Task | Checksum: 14bd02317
+
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.530 . Memory (MB): peak = 1939.367 ; gain = 0.000
+43 Infos, 1 Warnings, 0 Critical Warnings and 103 Errors encountered.
+place_design failed
+ERROR: [Common 17-69] Command failed: Placer could not place all instances
+INFO: [Common 17-206] Exiting Vivado at Mon Feb 17 17:44:37 2025...
+[Mon Feb 17 17:44:38 2025] impl_1 finished
+ERROR: [Vivado 12-13638] Failed runs(s) : 'impl_1'
+wait_on_runs: Time (s): cpu = 00:00:00 ; elapsed = 00:00:50 . Memory (MB): peak = 537.641 ; gain = 0.000
+ERROR: [Common 17-39] 'wait_on_runs' failed due to earlier errors.
+
+    while executing
+"wait_on_run impl_1"
+    (file "decisionTree_fixpt_Xilinx_Vivado_run.tcl" line 24)
+INFO: [Common 17-206] Exiting Vivado at Mon Feb 17 17:44:38 2025...
