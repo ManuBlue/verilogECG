@@ -1,3 +1,4 @@
+import decisionTree_fixpt_pkg::* ;
 `timescale 1 ns / 1 ns
 module top (
     input logic clk,                          // Clock signal for sequential processing
