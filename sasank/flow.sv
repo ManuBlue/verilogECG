@@ -64,11 +64,14 @@ module ECGPreprocess #(parameter SIGNAL_LENGTH = 187)(
     integer max_index, second_max_index;
     integer start_index, end_index;
     logic [12:0] max_value, second_max_value;
+    logic [12:0] min_value, range;
+    
     always @(*) begin
         if (SIGNAL_LENGTH < 2) begin
             for (i = 0; i < SIGNAL_LENGTH; i = i + 1)
                 processedSignal[i] = inputSignal[i];
         end else begin
+            // Find first and second maximum values
             if (inputSignal[0] > inputSignal[1]) begin
                 max_value         = inputSignal[0];
                 max_index         = 0;
@@ -80,7 +83,7 @@ module ECGPreprocess #(parameter SIGNAL_LENGTH = 187)(
                 second_max_value  = inputSignal[0];
                 second_max_index  = 0;
             end
- 
+
             for (i = 2; i < SIGNAL_LENGTH; i = i + 1) begin
                 if (inputSignal[i] > max_value) begin
                     second_max_value = max_value;
@@ -92,7 +95,8 @@ module ECGPreprocess #(parameter SIGNAL_LENGTH = 187)(
                     second_max_index = i;
                 end
             end
- 
+
+            // Determine start and end index for processing
             if (max_index < second_max_index) begin
                 start_index = max_index;
                 end_index   = second_max_index;
@@ -100,16 +104,36 @@ module ECGPreprocess #(parameter SIGNAL_LENGTH = 187)(
                 start_index = second_max_index;
                 end_index   = max_index;
             end
- 
+
+            // Initialize min and max for normalization
+            min_value = 13'h1FFF; // Set min to highest possible value
+            max_value = 13'd0;     // Set max to lowest possible value
+
+            // Copy valid signal values and find min/max
             for (i = 0; i < SIGNAL_LENGTH; i = i + 1) begin
-                if (i>=start_index && i<=end_index) processedSignal[i] = inputSignal[i];
-                else processedSignal[i] = 13'd0;
+                if (i >= start_index && i <= end_index) begin
+                    processedSignal[i] = inputSignal[i];
+                    if (inputSignal[i] < min_value)
+                        min_value = inputSignal[i];
+                    if (inputSignal[i] > max_value)
+                        max_value = inputSignal[i];
+                end else begin
+                    processedSignal[i] = 13'd0;
+                end
             end
-                       
+            
+            range = max_value - min_value;
+            if (range == 0) range = 1; 
+
+            for (i = 0; i < SIGNAL_LENGTH; i = i + 1) begin
+                if (processedSignal[i] > 0) begin
+                    processedSignal[i] = ((processedSignal[i] - min_value) * 13'd4095) / range;
+                end
+            end
         end
     end
- 
 endmodule
+
 module decisionTree_fixpt
           ( input vector_of_unsigned_logic_13 features[0:186]  ,
              output logic [2:0] output_rsvd);
