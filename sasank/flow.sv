@@ -23,17 +23,42 @@
 
 `timescale 1 ns / 1 ns
 package decisionTree_fixpt_pkg;
-  typedef  logic  [12:0] vector_of_unsigned_logic_13;
+typedef  logic  [12:0] vector_of_unsigned_logic_13;
 endpackage: decisionTree_fixpt_pkg
 import decisionTree_fixpt_pkg::* ;
+
 module top(input logic clk,input logic rst,input logic [12:0] serialData, output [3 : 0] out );
 wire [12:0] qout [0:186];
-queue q(clk,rst,serialData,qout);
+wire smallClk;
+converter ccc (clk,smallClk);
+queue q(smallClk,rst,serialData,qout);
 wire [12:0] ppout [0:186];
 ECGPreprocess pp (qout ,ppout);
 wire [2 : 0] dout;
 decisionTree_fixpt(ppout,dout);
 endmodule 
+module converter(
+    input bigClk,
+    output reg smallClk
+    );
+    reg [10:0] count;
+    reg temp = 0;
+    initial begin
+        smallClk = 0;
+    end
+    always @(posedge bigClk) begin
+        if (temp ==0) begin
+            smallClk = 0;
+            temp = 1;
+        end
+        if (count < 2) begin
+            count = count+1;
+        end else begin 
+            smallClk = ~smallClk;
+            count = 0;
+        end
+    end
+endmodule
 module queue(
     input logic clk,                          
     input logic rst,                          
