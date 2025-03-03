@@ -1,10 +1,12 @@
-
 module converter(
     input bigClk,
     output reg smallClk
     );
     reg [10:0] count;
     reg temp = 0;
+    initial begin
+        smallClk = 0;
+    end
     always @(posedge bigClk) begin
         if (temp ==0) begin
             smallClk = 0;
@@ -17,4 +19,4 @@ module converter(
             count = 0;
         end
     end
-endmodule
+endmodul
