@@ -42,34 +42,34 @@ module top(
         .output_rsvd(dout)
     );
 
-   integer outfile; // File descriptor
-    integer i;       // Loop index
+//   integer outfile; // File descriptor
+//    integer i;       // Loop index
 
-    // Open the file at simulation start. Using full path ensures the file is placed at:
-    // C:\Users\Lenovo\OneDrive\Desktop\preprocess_output.txt
-    initial begin
-        outfile = $fopen("C:/Users/Lenovo/OneDrive/Desktop/preprocess_output.txt", "w");
-        if (outfile == 0) begin
-            $display("Error: Unable to open file for writing.");
-            $finish;
-        end
-    end
+//    // Open the file at simulation start. Using full path ensures the file is placed at:
+//    // C:\Users\Lenovo\OneDrive\Desktop\preprocess_output.txt
+//    initial begin
+//        outfile = $fopen("C:\Users\hp\Desktop", "w");
+//        if (outfile == 0) begin
+//            $display("Error: Unable to open file for writing.");
+//            $finish;
+//        end
+//    end
 
-    // On each rising clock edge (and when not in reset), write the preprocessed output.
-    always @(posedge clk) begin
-        if (!rst) begin
-            // Loop through the ppout array and write each element.
-            for (i = 0; i < 187; i = i + 1) begin
-                $fwrite(outfile, "%0d ", ppout[i]);
-            end
-            $fwrite(outfile, "\n");  // Newline after each clock's output.
-        end
-    end
+//    // On each rising clock edge (and when not in reset), write the preprocessed output.
+//    always @(posedge clk) begin
+//        if (!rst) begin
+//            // Loop through the ppout array and write each element.
+//            for (i = 0; i < 187; i = i + 1) begin
+//                $fwrite(outfile, "%0d ", ppout[i]);
+//            end
+//            $fwrite(outfile, "\n");  // Newline after each clock's output.
+//        end
+//    end
 
-    // Close the file at the end of simulation to ensure all data is flushed.
-    final begin
-        $fclose(outfile);
-    end
+//    // Close the file at the end of simulation to ensure all data is flushed.
+//    final begin
+//        $fclose(outfile);
+//    end
 
 endmodule
 
@@ -119,32 +119,27 @@ module ECGPreprocess #(
     output logic [DATA_WIDTH-1:0] processed_signal [0:OUTPUT_LENGTH-1]
 );
 
-    // Local variables for peak detection
     integer i, j;
     integer peak_count;
-    integer peaks[0:SIGNAL_LENGTH-1];  // Store peak indices
+    integer peaks[0:SIGNAL_LENGTH-1];  
     integer filtered_count;
     integer filtered_peaks[0:SIGNAL_LENGTH-1];
     
-    // Variables for prominence calculation
     logic [DATA_WIDTH-1:0] left_min, right_min, base_line, prominence;
     
     always@(*) begin
-        // Initialize outputs and counters
         peak_count = 0;
         filtered_count = 0;
         
-        // Initialize processed signal to 0
         for (i = 0; i < OUTPUT_LENGTH; i = i + 1)
             processed_signal[i] = '0;
             
-        // Find peaks with prominence check
-        for (i = 1; i < SIGNAL_LENGTH-1; i = i + 1) begin
+        for (i = 0; i < SIGNAL_LENGTH; i = i + 1) begin
+        if(i!=0 && i!=SIGNAL_LENGTH-1) begin
             if (ecg_signal[i] > ecg_signal[i-1] && 
                 ecg_signal[i] > ecg_signal[i+1] && 
                 ecg_signal[i] >= HEIGHT_TH) begin
                 
-                // Find left minimum
                 left_min = ecg_signal[i];
                 j = i;
                 while (j > 0 && ecg_signal[j-1] < ecg_signal[i]) begin
@@ -152,7 +147,6 @@ module ECGPreprocess #(
                     j = j - 1;
                 end
                 
-                // Find right minimum
                 right_min = ecg_signal[i];
                 j = i;
                 while (j < SIGNAL_LENGTH-1 && ecg_signal[j+1] < ecg_signal[i]) begin
@@ -160,7 +154,6 @@ module ECGPreprocess #(
                     j = j + 1;
                 end
                 
-                // Calculate prominence
                 base_line = (left_min > right_min) ? left_min : right_min;
                 prominence = ecg_signal[i] - base_line;
                 
@@ -170,8 +163,8 @@ module ECGPreprocess #(
                 end
             end
         end
+        end
         
-        // Filter peaks by distance
         if (peak_count > 0) begin
             filtered_peaks[0] = peaks[0];
             filtered_count = 1;
@@ -187,20 +180,17 @@ module ECGPreprocess #(
             end
         end
         
-        // Process output signal
         if (filtered_count >= 2) begin
-            // Copy segment between first two peaks plus 40 samples
-            for (i = 0; i < OUTPUT_LENGTH && 
-                       (filtered_peaks[0] + i) <= (filtered_peaks[1] + 40) &&
-                       (filtered_peaks[0] + i) < SIGNAL_LENGTH; i = i + 1) begin
-                processed_signal[i] = ecg_signal[filtered_peaks[0] + i];
+            for (i = 0; i < OUTPUT_LENGTH ; i = i + 1) begin
+                if (((filtered_peaks[0] + i) <= (filtered_peaks[1] + 40)) && ((filtered_peaks[0] + i) < SIGNAL_LENGTH)) processed_signal[i] = ecg_signal[filtered_peaks[0] + i];
             end
             
             // Zero out values below second peak height
+            j = 0;
             for (i = OUTPUT_LENGTH-1; i >= 0; i = i - 1) begin
                 if (processed_signal[i] >= ecg_signal[filtered_peaks[1]])
-                    break;
-                processed_signal[i] = '0;
+                    j = 1;
+                if (j!=1) processed_signal[i] = '0;
             end
         end
         
