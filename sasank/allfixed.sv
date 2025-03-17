@@ -22,7 +22,6 @@ module top(
         .data(qout)
     );
 
-    // Instantiate the ECGPreprocess module (assumed defined elsewhere)
     wire [12:0] ppout [0:186];
     ECGPreprocess #(
         .SIGNAL_LENGTH(300),
@@ -36,7 +35,6 @@ module top(
         .processed_signal(ppout)
     );
 
-    // Instantiate the decision tree module (assumed defined elsewhere)
     decisionTree_fixpt myTree (
         .features(ppout),
         .output_rsvd(dout)
@@ -119,7 +117,7 @@ module ECGPreprocess #(
     output logic [DATA_WIDTH-1:0] processed_signal [0:OUTPUT_LENGTH-1]
 );
 
-    integer i, j;
+    integer i, j,k,breaked;
     integer peak_count;
     integer peaks[0:SIGNAL_LENGTH-1];  
     integer filtered_count;
@@ -142,17 +140,34 @@ module ECGPreprocess #(
                 
                 left_min = ecg_signal[i];
                 j = i;
-                while (j > 0 && ecg_signal[j-1] < ecg_signal[i]) begin
-                    left_min = (ecg_signal[j-1] < left_min) ? ecg_signal[j-1] : left_min;
-                    j = j - 1;
+                breaked = 0;
+                for (k= 0 ; k < SIGNAL_LENGTH ; k  = k + 1) begin
+                    if(!breaked && j > 0 && ecg_signal[j-1] < ecg_signal[i]) begin
+                        left_min = (ecg_signal[j-1] < left_min) ? ecg_signal[j-1] : left_min;
+                        j = j - 1;
+                    end
+                    else breaked = 1;
                 end
+//                while (j > 0 && ecg_signal[j-1] < ecg_signal[i]) begin
+//                    left_min = (ecg_signal[j-1] < left_min) ? ecg_signal[j-1] : left_min;
+//                    j = j - 1;
+//                end
                 
                 right_min = ecg_signal[i];
                 j = i;
-                while (j < SIGNAL_LENGTH-1 && ecg_signal[j+1] < ecg_signal[i]) begin
-                    right_min = (ecg_signal[j+1] < right_min) ? ecg_signal[j+1] : right_min;
-                    j = j + 1;
-                end
+                breaked = 0;
+                for ( k = 0; k<SIGNAL_LENGTH ;k = k + 1) begin
+                    if(!breaked && j < SIGNAL_LENGTH-1 && ecg_signal[j+1] < ecg_signal[i]) begin
+                        right_min = (ecg_signal[j+1] < right_min) ? ecg_signal[j+1] : right_min;
+                        j = j + 1;
+                    end
+                    else breaked = 1;
+                
+                end 
+//                while (j < SIGNAL_LENGTH-1 && ecg_signal[j+1] < ecg_signal[i]) begin
+//                    right_min = (ecg_signal[j+1] < right_min) ? ecg_signal[j+1] : right_min;
+//                    j = j + 1;
+//                end
                 
                 base_line = (left_min > right_min) ? left_min : right_min;
                 prominence = ecg_signal[i] - base_line;
@@ -168,14 +183,15 @@ module ECGPreprocess #(
         if (peak_count > 0) begin
             filtered_peaks[0] = peaks[0];
             filtered_count = 1;
-            
-            for (i = 1; i < peak_count; i = i + 1) begin
+            for (i = 0; i < peak_count; i = i + 1) begin
+                if (i!=0 && filtered_count<=2) begin
                 if (peaks[i] - filtered_peaks[filtered_count-1] < DISTANCE) begin
                     if (ecg_signal[peaks[i]] > ecg_signal[filtered_peaks[filtered_count-1]])
                         filtered_peaks[filtered_count-1] = peaks[i];
                 end else begin
                     filtered_peaks[filtered_count] = peaks[i];
                     filtered_count = filtered_count + 1;
+                end
                 end
             end
         end
@@ -185,7 +201,6 @@ module ECGPreprocess #(
                 if (((filtered_peaks[0] + i) <= (filtered_peaks[1] + 40)) && ((filtered_peaks[0] + i) < SIGNAL_LENGTH)) processed_signal[i] = ecg_signal[filtered_peaks[0] + i];
             end
             
-            // Zero out values below second peak height
             j = 0;
             for (i = OUTPUT_LENGTH-1; i >= 0; i = i - 1) begin
                 if (processed_signal[i] >= ecg_signal[filtered_peaks[1]])
@@ -1280,4 +1295,4 @@ module decisionTree_fixpt
 
   assign output_rsvd = output_rsvd_1;
 
-endmodule  // decisionTree_fixpt
+endmodule  
