@@ -276,8 +276,8 @@ module ECGPreprocess #(
 
                 FINALIZE: begin
                     if (idx < OUTPUT_LENGTH) begin
-                        scaled_value <= ((processed_signal[idx] - min_value) * 13'd4095)/(max_value==min_value ? 1 : max_value - min_value);
-                        processed_signal[idx] <= scaled_value;
+                        scaled_value = ((processed_signal[idx] - min_value) * 13'd4095)/(max_value==min_value ? 1 : max_value - min_value);
+                        processed_signal[idx] = scaled_value;
                         $display(scaled_value);
                         $display("Processed signal[%0d] = %d", idx,processed_signal[idx]);
                         idx <= idx + 1;
@@ -292,7 +292,6 @@ module ECGPreprocess #(
     assign done = (state == FINALIZE);
 
 endmodule
-
 
 module decisionTree_fixpt
           ( input vector_of_unsigned_logic_13 features[0:186]  ,
