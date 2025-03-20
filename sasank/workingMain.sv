@@ -173,10 +173,10 @@ module ECGPreprocess #(
     integer current_index;
     logic [DATA_WIDTH-1:0] temp_signal [0:OUTPUT_LENGTH-1];
     logic j;
+    logic [25:0] scaled_value;
     logic [DATA_WIDTH-1:0] copy [0:SIGNAL_LENGTH-1];
-
-    // Variables for scaling
-    logic [DATA_WIDTH-1:0] min_val, max_val;
+    logic [DATA_WIDTH-1:0] tempo [0:OUTPUT_LENGTH-1];
+    logic  [12:0] min_value , max_value, range;
     integer valid_length; // Number of valid samples from peaks[0] to peaks[1]+40 (capped at OUTPUT_LENGTH)
     integer k;
 
@@ -268,14 +268,16 @@ module ECGPreprocess #(
 
                 FINALIZE: begin
                     $display("State: FINALIZE, current_index: %0d", current_index);
-                    // Fill any remaining slots in the output if not already done.
-                    if (current_index < OUTPUT_LENGTH) begin
-                        processed_signal[current_index] <= '0;
-                        current_index = current_index + 1;
-                    end
-                    // When the entire OUTPUT_LENGTH has been processed, perform scaling.
-                    if (1) begin
-                        // Determine valid_length based on peaks information.
+
+
+//                    // Fill any remaining slots in the output if not already done.
+//                    if (current_index < OUTPUT_LENGTH) begin
+//                        processed_signal[current_index] <= '0;
+//                        current_index = current_index + 1;
+//                    end
+//                    // When the entire OUTPUT_LENGTH has been processed, perform scaling.
+                    
+//                        // Determine valid_length based on peaks information.
                         if (peak_count >= 2) begin
                             valid_length = ((peaks[1] + 40) - peaks[0] + 1);
                             if (valid_length > OUTPUT_LENGTH)
@@ -284,32 +286,40 @@ module ECGPreprocess #(
                             valid_length = OUTPUT_LENGTH;
                         end
 
-                        // Compute min and max values over the valid region.
-                        min_val = processed_signal[0];
-                        max_val = processed_signal[0];
+                        min_value = processed_signal[0];
+                        max_value = processed_signal[0];
                         for (k = 0; k < valid_length; k = k + 1) begin
-                            if (processed_signal[k] < min_val)
-                                min_val = processed_signal[k];
-                            if (processed_signal[k] > max_val)
-                                max_val = processed_signal[k];
+                            if (processed_signal[k] > max_value) max_value = processed_signal[k];
+                            if(processed_signal[k] < min_value) min_value = processed_signal[k];
                         end
                         $display("hjoehjijo");
-                        $display(max_val,min_val);
-                        // Avoid division by zero by checking if max_val equals min_val.
-                        if (max_val != min_val) begin
-                            // Temporary register for the multiplication result (wider to avoid overflow)
-                            logic [25:0] temp_value;
-                            // Apply min-max scaling for the valid region.
-                            // scaled_value = ((processed_signal[k] - min_val) * 4095) / (max_val - min_val)
-                            for (k = 0; k < valid_length; k = k + 1) begin
-                                temp_value = (processed_signal[k] - min_val) * 13'd4095;
-                                processed_signal[k] <= temp_value / (max_val - min_val);
+                        $display(max_value,min_value);
+                        range = max_value - min_value;
+                        if (range == 0) range = 1; 
+                        
+                        for (i = 0; i < OUTPUT_LENGTH; i = i + 1) begin
+                            if (processed_signal[i] > 0) begin
+                                scaled_value = (processed_signal[i] - min_value) * 13'd4095;
+                                processed_signal[i] = scaled_value / range;                
                             end
                         end 
-                        for (k = 0; k < valid_length; k = k + 1) begin
+//                        // Avoid division by zero by checking if max_val equals min_val.
+//                        if (max_val != min_val) begin
+//                            // Temporary register for the multiplication result (wider to avoid overflow)
+//                            logic [25:0] temp_value;
+                            
+//                            // Apply min-max scaling for the valid region.
+//                            // scaled_value = ((processed_signal[k] - min_val) * 4095) / (max_val - min_val)
+//                            for (k = 0; k < valid_length; k = k + 1) begin
+//                                temp_value = (processed_signal[k] - min_val) * 13'd4095;
+//                                tempo[k] <= temp_value / (max_val - min_val);
+//                                $display(temp_value / (max_val - min_val));
+//                            end
+//                        end 
+                        for (k = 0; k < OUTPUT_LENGTH; k = k + 1) begin
                             $display("Final processed_signal[%0d] = %d", k, processed_signal[k]);
                         end
-                    end
+                   
                 end
             endcase
         end
