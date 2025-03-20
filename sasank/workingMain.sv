@@ -144,10 +144,10 @@ module queue #(
 
 endmodule
 module ECGPreprocess #(
-    parameter SIGNAL_LENGTH = 300,        
-    parameter DATA_WIDTH    = 13,         
-    parameter HEIGHT_TH     = 13'd2000,            
-    parameter OUTPUT_LENGTH = 187         
+    parameter SIGNAL_LENGTH = 300,
+    parameter DATA_WIDTH    = 13,
+    parameter HEIGHT_TH     = 13'd2000,
+    parameter OUTPUT_LENGTH = 187
 )(
     input  logic clk,
     input  logic rst,
@@ -157,6 +157,7 @@ module ECGPreprocess #(
     output logic done
 );
 
+    // State machine declaration
     typedef enum logic [1:0] {
         IDLE,
         FIND_PEAKS,
@@ -166,13 +167,20 @@ module ECGPreprocess #(
 
     state_t state, next_state;
 
+    // Internal variables
     integer i, peak_count;
     integer peaks[0:SIGNAL_LENGTH-1];
     integer current_index;
     logic [DATA_WIDTH-1:0] temp_signal [0:OUTPUT_LENGTH-1];
     logic j;
     logic [DATA_WIDTH-1:0] copy [0:SIGNAL_LENGTH-1];
-    // State machine
+
+    // Variables for scaling
+    logic [DATA_WIDTH-1:0] min_val, max_val;
+    integer valid_length; // Number of valid samples from peaks[0] to peaks[1]+40 (capped at OUTPUT_LENGTH)
+    integer k;
+
+    // State machine sequential block
     always_ff @(posedge clk or posedge rst) begin
         if (rst) begin
             state <= IDLE;
@@ -181,6 +189,7 @@ module ECGPreprocess #(
         end
     end
 
+    // Next state logic
     always_comb begin
         next_state = state;
         case (state)
@@ -191,12 +200,13 @@ module ECGPreprocess #(
         endcase
     end
 
-    // Sequential logic for processing
+    // Main sequential logic block for processing
     always_ff @(posedge clk or posedge rst) begin
         if (rst) begin
             peak_count = 0;
             current_index = 0;
             j = 0;
+            // Initialize processed_signal and temp_signal arrays to zero.
             for (i = 0; i < OUTPUT_LENGTH; i = i + 1) begin
                 processed_signal[i] = '0;
                 temp_signal[i] = '0;
@@ -212,16 +222,18 @@ module ECGPreprocess #(
                     if (start) begin
                         $display("Received ECG Signal:");
                         for (i = 0; i < SIGNAL_LENGTH; i = i + 1) begin
-                                copy[i] = ecg_signal[i];
-                                $display("%d: %d", i, ecg_signal[i]);
-                            
+                            copy[i] = ecg_signal[i];
+                            $display("%d: %d", i, ecg_signal[i]);
                         end
                     end
                 end
+
                 FIND_PEAKS: begin
                     $display("State: FIND_PEAKS, current_index: %0d", current_index);
                     if (current_index < SIGNAL_LENGTH - 1) begin
-                        $display("Values : ",copy[current_index - 1],copy[current_index ],copy[current_index +1]);
+                        if (current_index > 0) begin
+                            $display("Values: %d, %d, %d", copy[current_index - 1], copy[current_index], copy[current_index + 1]);
+                        end
                         if (current_index > 0 &&
                             copy[current_index] > copy[current_index - 1] &&
                             copy[current_index] > copy[current_index + 1] &&
@@ -235,16 +247,16 @@ module ECGPreprocess #(
                         current_index = 0;
                     end
                 end
+
                 PROCESS_SIGNAL: begin
                     $display("State: PROCESS_SIGNAL, current_index: %0d, peak_count: %0d", current_index, peak_count);
                     if (peak_count >= 2 && current_index < OUTPUT_LENGTH) begin
-                        // Copy input signal from peaks[0] to peaks[1] + 40
+                        // Copy input signal from peaks[0] to (peaks[1] + 40)
                         if ((peaks[0] + current_index) <= (peaks[1] + 40) &&
                             (peaks[0] + current_index) < SIGNAL_LENGTH) begin
                             processed_signal[current_index] = copy[peaks[0] + current_index];
-                            $display("Processed signal[%0d] = %b", current_index, copy[peaks[0] + current_index]);
+                            $display("Processed signal[%0d] = %d", current_index, copy[peaks[0] + current_index]);
                         end else begin
-                            // Fill extra slots with 0
                             processed_signal[current_index] <= '0;
                             $display("Processed signal[%0d] = 0", current_index);
                         end
@@ -253,31 +265,62 @@ module ECGPreprocess #(
                         current_index = current_index + 1;
                     end
                 end
+
                 FINALIZE: begin
                     $display("State: FINALIZE, current_index: %0d", current_index);
+                    // Fill any remaining slots in the output if not already done.
                     if (current_index < OUTPUT_LENGTH) begin
                         processed_signal[current_index] <= '0;
                         current_index = current_index + 1;
+                    end
+                    // When the entire OUTPUT_LENGTH has been processed, perform scaling.
+                    if (1) begin
+                        // Determine valid_length based on peaks information.
+                        if (peak_count >= 2) begin
+                            valid_length = ((peaks[1] + 40) - peaks[0] + 1);
+                            if (valid_length > OUTPUT_LENGTH)
+                                valid_length = OUTPUT_LENGTH;
+                        end else begin
+                            valid_length = OUTPUT_LENGTH;
+                        end
+
+                        // Compute min and max values over the valid region.
+                        min_val = processed_signal[0];
+                        max_val = processed_signal[0];
+                        for (k = 0; k < valid_length; k = k + 1) begin
+                            if (processed_signal[k] < min_val)
+                                min_val = processed_signal[k];
+                            if (processed_signal[k] > max_val)
+                                max_val = processed_signal[k];
+                        end
+                        $display("hjoehjijo");
+                        $display(max_val,min_val);
+                        // Avoid division by zero by checking if max_val equals min_val.
+                        if (max_val != min_val) begin
+                            // Temporary register for the multiplication result (wider to avoid overflow)
+                            logic [25:0] temp_value;
+                            // Apply min-max scaling for the valid region.
+                            // scaled_value = ((processed_signal[k] - min_val) * 4095) / (max_val - min_val)
+                            for (k = 0; k < valid_length; k = k + 1) begin
+                                temp_value = (processed_signal[k] - min_val) * 13'd4095;
+                                processed_signal[k] <= temp_value / (max_val - min_val);
+                            end
+                        end 
+                        for (k = 0; k < valid_length; k = k + 1) begin
+                            $display("Final processed_signal[%0d] = %d", k, processed_signal[k]);
+                        end
                     end
                 end
             endcase
         end
     end
 
-    // Done signal
+    // The done signal goes high when in FINALIZE state.
     assign done = (state == FINALIZE);
 
-    // Print processed signal when done
-    always_ff @(posedge clk) begin
-        if (done) begin
-            $display("Processed Signal:");
-            for (i = 0; i < OUTPUT_LENGTH; i = i + 1) begin
-                $display("%d: %b", i, processed_signal[i]);
-            end
-        end
-    end
-
 endmodule
+
+
 
 module decisionTree_fixpt
           ( input vector_of_unsigned_logic_13 features[0:186]  ,
