@@ -114,7 +114,7 @@ module converter(
             smallClk = 0;
             temp = 1;
         end
-        if (count < 800000) begin
+        if (count < 400000) begin
             count = count+1;
         end else begin 
             smallClk = ~smallClk;
@@ -181,7 +181,8 @@ module queue #(
     // Declared as logic so that we can drive it with continuous assignments
     output [DATA_WIDTH-1:0] data [0:QUEUE_SIZE-1]
 );
-
+    logic tempclk;
+    assign tempclk = clk & write_enable;
     // Each bit of the serial data is shifted in its own chain.
     // temp[j] is a QUEUE_SIZE-bit vector corresponding to bit j's chain.
     wire [QUEUE_SIZE-1:0] temp [DATA_WIDTH-1:0];
@@ -192,8 +193,8 @@ module queue #(
             shiftRegister #(
                 .length(QUEUE_SIZE)
             ) shift_reg_inst (
-                .si(write_enable ? serialData[i] : 1'b0), // Use write enable signal
-                .clk(clk),
+                .si(serialData[i]), // Use write enable signal
+                .clk(tempclk),
                 .rst(rst),
                 .out(temp[i])
             );
@@ -206,7 +207,7 @@ module queue #(
     generate
         for (ii = 0; ii < QUEUE_SIZE; ii = ii + 1) begin : data_words
             for (jj = 0; jj < DATA_WIDTH; jj = jj + 1) begin : bit_assign
-                assign data[ii][jj] = temp[jj][ii];
+                assign data[QUEUE_SIZE-ii-1][jj] = temp[jj][ii];
             end
         end
     endgenerate
@@ -304,10 +305,10 @@ module ECGPreprocess #(
                 end
 
                 FIND_PEAKS: begin
-                    $display("State: FIND_PEAKS, current_index: %0d", current_index);
+                    //$display("State: FIND_PEAKS, current_index: %0d", current_index);
                     if (current_index < SIGNAL_LENGTH - 1) begin
                         if (current_index > 0) begin
-                            $display("Values: %d, %d, %d", copy[current_index - 1], copy[current_index], copy[current_index + 1]);
+                            //$display("Values: %d, %d, %d", copy[current_index - 1], copy[current_index], copy[current_index + 1]);
                         end
                         if (current_index > 0 &&
                             copy[current_index] > copy[current_index - 1] &&
@@ -315,7 +316,7 @@ module ECGPreprocess #(
                             copy[current_index] >= HEIGHT_TH) begin
                             peaks[peak_count] = current_index;
                             peak_count = peak_count + 1;
-                            $display("Peak found at index: %0d, peak_count: %0d", current_index, peak_count);
+                            //$display("Peak found at index: %0d, peak_count: %0d", current_index, peak_count);
                         end
                         current_index = current_index + 1;
                     end else begin
@@ -324,16 +325,16 @@ module ECGPreprocess #(
                 end
 
                 PROCESS_SIGNAL: begin
-                    $display("State: PROCESS_SIGNAL, current_index: %0d, peak_count: %0d", current_index, peak_count);
+                    //$display("State: PROCESS_SIGNAL, current_index: %0d, peak_count: %0d", current_index, peak_count);
                     if (peak_count >= 2 && current_index < OUTPUT_LENGTH) begin
                         // Copy input signal from peaks[0] to (peaks[1] + 40)
                         if ((peaks[0] + current_index) <= (peaks[1] + 40) &&
                             (peaks[0] + current_index) < SIGNAL_LENGTH) begin
                             processed_signal[current_index] = copy[peaks[0] + current_index];
-                            $display("Processed signal[%0d] = %d", current_index, copy[peaks[0] + current_index]);
+                            //$display("Processed signal[%0d] = %d", current_index, copy[peaks[0] + current_index]);
                         end else begin
                             processed_signal[current_index] <= '0;
-                            $display("Processed signal[%0d] = 0", current_index);
+                           // $display("Processed signal[%0d] = 0", current_index);
                         end
                         if (processed_signal[current_index] > max_value) max_value = processed_signal[current_index];
                         if(processed_signal[current_index] < min_value) min_value = processed_signal[current_index];
@@ -347,8 +348,8 @@ module ECGPreprocess #(
                     if (idx < OUTPUT_LENGTH) begin
                         scaled_value = ((processed_signal[idx] - min_value) * 13'd4095)/(max_value==min_value ? 1 : max_value - min_value);
                         processed_signal[idx] = scaled_value;
-                        $display(scaled_value);
-                        $display("Processed signal[%0d] = %d", idx,processed_signal[idx]);
+                        //$display(scaled_value);
+                        //$display("Processed signal[%0d] = %d", idx,processed_signal[idx]);
                         idx <= idx + 1;
                     end
                    
