@@ -4,7 +4,7 @@
 <!-- Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.                   -->
 <!-- Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.   -->
 
-<Project Product="Vivado" Version="7" Minor="67" Path="D:/Matlab Files/PTSP Lab/MachineLearning/codegen/decisionTree/hdlsrc/vivado_prj/decisionTree_fixpt_vivado.xpr">
+<Project Product="Vivado" Version="7" Minor="67" Path="D:/Projects/verilogECG/vivado_prj/decisionTree_fixpt_vivado.xpr">
   <DefaultLaunch Dir="$PRUNDIR"/>
   <Configuration>
     <Option Name="Id" Val="5e5913a5c0fa4f9b8d20410f7bf44f8b"/>
@@ -89,14 +89,14 @@
   <FileSets Version="1" Minor="32">
     <FileSet Name="sources_1" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1" RelGenDir="$PGENDIR/sources_1">
       <Filter Type="Srcs"/>
-      <File Path="$PPRDIR/../decisionTree_fixpt_pkg.sv">
+      <File Path="$PPRDIR/../../../Matlab Files/PTSP Lab/MachineLearning/codegen/decisionTree/hdlsrc/decisionTree_fixpt_pkg.sv">
         <FileInfo>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
-      <File Path="$PPRDIR/../decisionTree_fixpt.sv">
+      <File Path="$PPRDIR/../../../Matlab Files/PTSP Lab/MachineLearning/codegen/decisionTree/hdlsrc/decisionTree_fixpt.sv">
         <FileInfo>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>

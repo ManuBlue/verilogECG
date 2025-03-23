@@ -1,24 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_1" LaunchPart="xa7a100tcsg324-1I" LaunchTime="1739878278" LaunchIncrCheckpoint="$PSRCDIR/utils_1/imports/synth_1/decisionTree_fixpt.dcp">
+<GenRun Id="synth_1" LaunchPart="xa7a100tcsg324-1I" LaunchTime="1739878278" LaunchIncrCheckpoint="$PPRDIR/../../../Matlab Files/PTSP Lab/MachineLearning/codegen/decisionTree/hdlsrc/vivado_prj/decisionTree_fixpt_vivado.srcs/utils_1/imports/synth_1/decisionTree_fixpt.dcp">
   <File Type="PA-TCL" Name="top.tcl"/>
-  <File Type="RDS-PROPCONSTRS" Name="top_drc_synth.rpt"/>
   <File Type="REPORTS-TCL" Name="top_reports.tcl"/>
   <File Type="RDS-RDS" Name="top.vds"/>
   <File Type="RDS-UTIL" Name="top_utilization_synth.rpt"/>
   <File Type="RDS-UTIL-PB" Name="top_utilization_synth.pb"/>
   <File Type="RDS-DCP" Name="top.dcp"/>
-  <File Type="VDS-TIMINGSUMMARY" Name="top_timing_summary_synth.rpt"/>
-  <File Type="VDS-TIMING-PB" Name="top_timing_summary_synth.pb"/>
   <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1" RelGenDir="$PGENDIR/sources_1">
     <Filter Type="Srcs"/>
-    <File Path="$PPRDIR/../decisionTree_fixpt_pkg.sv">
+    <File Path="$PPRDIR/../../../Matlab Files/PTSP Lab/MachineLearning/codegen/decisionTree/hdlsrc/decisionTree_fixpt_pkg.sv">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PPRDIR/../decisionTree_fixpt.sv">
+    <File Path="$PPRDIR/../../../Matlab Files/PTSP Lab/MachineLearning/codegen/decisionTree/hdlsrc/decisionTree_fixpt.sv">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>

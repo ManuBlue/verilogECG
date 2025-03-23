@@ -1,0 +1,25 @@
+#-----------------------------------------------------------
+# Vivado v2024.1 (64-bit)
+# SW Build 5076996 on Wed May 22 18:37:14 MDT 2024
+# IP Build 5075265 on Wed May 22 21:45:21 MDT 2024
+# SharedData Build 5076995 on Wed May 22 18:29:18 MDT 2024
+# Start of session at: Thu Feb 20 21:23:21 2025
+# Process ID: 14348
+# Current directory: D:/Projects/verilogECG/vivado_prj/decisionTree_fixpt_vivado.srcs/utils_1/imports/synth_1
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent8956 D:\Projects\verilogECG\vivado_prj\decisionTree_fixpt_vivado.srcs\utils_1\imports\synth_1\decisionTree_fixpt.dcp
+# Log file: D:/Projects/verilogECG/vivado_prj/decisionTree_fixpt_vivado.srcs/utils_1/imports/synth_1/vivado.log
+# Journal file: D:/Projects/verilogECG/vivado_prj/decisionTree_fixpt_vivado.srcs/utils_1/imports/synth_1\vivado.jou
+# Running On        :NoName
+# Platform          :Windows Server 2016 or Windows 10
+# Operating System  :26100
+# Processor Detail  :12th Gen Intel(R) Core(TM) i7-12700H
+# CPU Frequency     :2688 MHz
+# CPU Physical cores:14
+# CPU Logical cores :20
+# Host memory       :16788 MB
+# Swap memory       :16788 MB
+# Total Virtual     :33577 MB
+# Available Virtual :19502 MB
+#-----------------------------------------------------------
+start_gui
+open_checkpoint D:/Projects/verilogECG/vivado_prj/decisionTree_fixpt_vivado.srcs/utils_1/imports/synth_1/decisionTree_fixpt.dcp

@@ -1,0 +1,5 @@
+set_property SRC_FILE_INFO {cfile:D:/Projects/verilogECG/testGPIO/testGPIO.srcs/constrs_1/new/test.xdc rfile:../../../testGPIO.srcs/constrs_1/new/test.xdc id:1} [current_design]
+set_property src_info {type:XDC file:1 line:1 export:INPUT save:INPUT read:READ} [current_design]
+set_property PACKAGE_PIN C17 [get_ports myIn]
+set_property src_info {type:XDC file:1 line:4 export:INPUT save:INPUT read:READ} [current_design]
+set_property PACKAGE_PIN V11 [get_ports myOut]
